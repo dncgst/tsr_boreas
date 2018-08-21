@@ -1,0 +1,197 @@
+---
+title: "Spatial taphonomy of the Late Villafranchian vertebrate locality of Tsiotra Vryssi, Mygdonia Basin, Greece"
+subtitle: "Geostatistics"
+author: "Domenico Giusti"
+date: "`r Sys.Date()`"
+bibliography: "../doc/manuscript/tsr_rr.bib"
+output: 
+  html_document: 
+    fig_caption: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, eval=TRUE, echo=FALSE, message=FALSE}
+# load required packages
+library(sp)
+library(maptools) # need for class conversion
+library(rgdal)
+library(lattice)
+library(gstat)
+library(spatstat)
+```
+
+```{r, eval=TRUE, echo=FALSE, message=FALSE}
+getwd()
+```
+
+## Reading and subsetting data
+
+```{r}
+# reading data
+summary(X)
+
+# subset isolated Bone, Bone/Tooth, Tooth
+foo <- X[which(X$type.y %in% c("Bone","Bone/Tooth","Tooth") & X$articulation == "isolated" & X$suffix == 0),]
+
+# subset articulated Bone, Bone/Tooth, Tooth
+bar <- X[which(X$type.y %in% c("Bone","Bone/Tooth","Tooth") & X$articulation == "articulated"),]
+
+X.sp <- rbind(foo, bar)
+summary(X.sp)
+```
+
+```{r, eval=TRUE, echo=FALSE, message=FALSE, results='hide'}
+# convert data.frame to SpatialPointsDataFrame
+X.sp$y <- -X.sp$y
+coordinates(X.sp) <- c("y", "x")
+class(X.sp)
+bbox(X.sp)
+
+# distribution map
+X.sp$type.y <- factor(X.sp$type.y)
+spplot(X.sp, "type.y")
+```
+
+```{r}
+# convert SpatialPointsDataFrame to ppp
+X.ppp <- as(X.sp, "ppp") # X.ppp <- as.ppp(X.sp)
+class(X.ppp)
+summary(X.ppp)
+plot(unmark(X.ppp))
+
+## excavated window of analysis
+ogrInfo("data/shp/-bbox.shp")
+bbox.shp <- readOGR("data/shp/-bbox.shp", layer="-bbox")
+proj4string(bbox.shp) <- CRS(as.character(NA))
+bbox(bbox.shp)
+plot(bbox.shp)
+w <- as.owin(bbox.shp)
+Window(X.ppp) <- w
+plot(X.ppp, which.marks="type.y")
+
+# convert ppp back to SpatialPointsDataFrame
+X.sp <- as(X.ppp, "SpatialPointsDataFrame")
+summary(X.sp)
+plot(X.sp)
+```
+
+## Estimating anisotropy
+
+### Fry plot and pair correlation function
+
+```{r}
+# quadrat counts
+plot(quadratcount(X.ppp, nx=10, ny=4))
+plot(X.ppp, add=TRUE)
+plot(intensity(quadratcount(X.ppp, nx=40, ny=16), image=TRUE))
+plot(intensity(quadratcount(X.ppp, tess=hextess(X.ppp, .1)), image=TRUE))
+
+# kernel density
+plot(density(X.ppp, sigma=bw.diggle(X.ppp), adjust=1, diggle=TRUE))
+plot(density(X.ppp, sigma=bw.ppl(X.ppp), adjust=1, diggle=TRUE))
+d <- density(X.ppp, sigma=bw.ppl(X.ppp), adjust=1, diggle=TRUE)
+class(d)
+plot(d)
+d <- as.data.frame(d)
+summary(d)
+
+# spatially adapted smoothing
+plot(adaptive.density(X.ppp))
+
+# nearest-neighbour density
+plot(nndensity(X.ppp, k=150))
+```
+
+### Variogram
+
+```{r}
+coordinates(d) <- c("x", "y")
+class(d)
+summary(d)
+```
+
+```{r}
+# > In geostatistics the spatial correlation is modelled by the variogram instead of a correlogram or covariogram, largely for historical reasons. The variogram (or semivariogram) plots semivariance as a function of distance. [Bivand2008]
+
+# > A way to explore spatial correlation is by plotting the variogram and the variogram cloud [Bivand2008]
+
+# variogram
+## object: the variable
+## cutoff: spatial separation distance up to which point pairs are included in semivariance estimates; as a default, the length of the diagonal of the box spanning the data is divided by three
+## width: the width of subsequent distance intervals into which data point pairs are grouped for semivariance estimates
+## alpha: direction in plane (x,y), in positive degrees clockwise from positive y (North): alpha=0 for direction North (increasing y), alpha=90 for direction East (increasing x); optional a vector of directions in (x,y)
+## beta: direction in z, in positive degrees up from the (x,y) plane
+
+# semivariogram cloud, obtained by plotting all possible squared differences of observation pairs (Z(s_i)-Z(s_j))^2 against their separation distance h_ij
+## object: in case of variogram.formula, formula defining the response vector and (possible) regressors, in case of absence of regressors, use e.g. z~1
+plot(variogram(object=value~1, data=d, cloud=TRUE))
+plot(variogram(object=value~1, data=d))
+
+# omnidirectional variogram modelling
+show.vgms()
+vgm()
+vgm(psill=650, model="Sph", range=1, nugget=0)
+vgm(psill=650, model="Exp", range=2.5, nugget=0)
+v <- variogram(object=value~1, data=d)
+plot(v)
+v.fit <- fit.variogram(v, vgm(psill=600, model="Sph", range=1.0, nugget=50))
+#v.fit <- fit.variogram(v, vgm(psill=600, model="Exp", range=1.0, nugget=50))
+plot(v, v.fit)
+
+# anisotropy
+v.dir <- variogram(object=value~1, d, alpha=c(0,45,90,135))
+plot(v.dir)
+
+# directional sample variograms and fitted omnidirectional variogram
+plot(v.dir, v.fit, main="Directional variogram")
+
+# variogram map
+v.map <- variogram(value~1, d, map=TRUE, cutoff=3, width=0.1)
+plot(v.map, xlab="E-W distance (m)", ylab="N-S distance (m)", main="Variogram map")
+```
+
+#### Fig.
+
+```{r}
+show.settings()
+par <- trellis.par.get()
+my.theme <- trellis.par.get()
+my.theme$strip.background$col = "#d9d9d9ff"
+my.theme$plot.symbol$col = "#595959ff"
+my.theme$plot.symbol$pch = 16
+my.theme$plot.line$col = "#e41a1c"
+my.theme$plot.line$lwd = 2
+my.theme$regions$col <- gray(0:100/100)
+show.settings(my.theme)
+
+
+# Fig.4 Directional variograms (a) and variogram map (b)
+setEPS()
+
+spatstat.options("monochrome"=FALSE)
+trellis.par.set(my.theme)
+
+#postscript("./doc/artwork/Fig.eps", width=12, height=10)
+
+pdf("./doc/manuscript/artwork/Fig:gstat_.pdf", width=7.48)
+pdf("./doc/manuscript/artwork/Variograms.pdf", width=7.48)
+pdf("./doc/manuscript/artwork/Variomap.pdf", width=7.48)
+
+pdf("./doc/manuscript/artwork/Fig:gstat_test.pdf", width=10, height=10)
+
+layout(matrix(c(1,1,2,3), 2, 2, byrow = TRUE), widths=c(1,1), heights=c(1,1))
+#layout.show(nf)
+
+par(ps=7, cex=1, cex.main=2, cex.axis=1, cex.lab=1)
+
+plot(density(X.ppp, sigma=bw.ppl(X.ppp), adjust=1, diggle=TRUE), axes=TRUE, main="a")
+plot(v.dir, v.fit, main="b")
+plot(v.map, xlab="E-W distance (m)", ylab="N-S distance (m)", main="c")
+
+dev.off()
+```
+
+## References

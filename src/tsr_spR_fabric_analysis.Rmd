@@ -1,0 +1,386 @@
+---
+title: "Spatial taphonomy of the Late Villafranchian vertebrate locality of Tsiotra Vryssi, Mygdonia Basin, Greece"
+subtitle: "Fabric analysis"
+author: "Domenico Giusti"
+bibliography: "../doc/manuscript/tsr_rr.bib"
+output: 
+  html_document: 
+    fig_caption: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, eval=TRUE, echo=FALSE, message=FALSE}
+# load required packages
+library(circular)
+library(CircStats)
+library(RFOC)
+library(plotrix)
+library(heR.Misc)
+```
+
+```{r, eval=TRUE, echo=FALSE, message=FALSE}
+getwd()
+```
+
+## Reading and subsetting data
+
+```{r, eval=TRUE, echo=FALSE, message=FALSE, results='hide'}
+# reading data
+summary(X.df)
+
+# remove plunge/bearing NA's
+X.circ <- X.df[-which(is.na(X.df$marks.bearing)),]
+X.circ <- X.circ[-which(is.na(X.circ$marks.plunge)),]
+
+# subset articulated/isolated bones
+X.circ <- X.circ[which(X.circ$marks.articulation == "isolated"),]
+#X.circ.art <- X.circ[which(X.circ$articulation == "articulated"),]
+
+# remove length NA's & subset length > 20mm
+X.circ <- X.circ[-which(is.na(X.circ$marks.length.x)),]
+X.circ <- X.circ[which(X.circ$marks.length.x >= 20),]
+
+# subset excavation year (2015-2016)
+#library(dplyr)
+#X <- dplyr::filter(X, date < as.Date("2017-01-01"))
+#summary(X)
+
+# remove turtle shell
+X.circ$marks.description <- factor(X.circ$marks.description)
+summary(X.circ$marks.description)
+X.circ <- X.circ[which(X.circ$marks.class %in% c("Mammalia",NA)),]
+#X.circ <- X.circ[-which(X.circ$description %in% c("?turtle shell","shell")),]
+
+# remove teeth
+X.circ$marks.type.y <- factor(X.circ$marks.type.y)
+summary(X.circ$marks.type.y)
+X.circ <- X.circ[-which(X.circ$marks.type.y == "Tooth"),]
+
+summary(X.circ)
+```
+
+Circular statistics are applied to a subset of `r length(X.circ$articulation)` isolated specimens (not articulated) from Geo 4, for which plunge,bearing and length were recorded and length >= 2cm. The subset of material was collected from 2015 to 2017.
+
+The material includes 24 complete bones (1 femur, 12 metapode, 2 phalanx, 1 radius/fibula, 1 rib, 4 scapula, 2 tarsal, 1 ulna) and 239 fragmented bones (64 ?, 1 ?femur, 1 antler, 1 cranium, 1 femur, 4 humerus, 132 limb bone, 1 mandible, 7 metapode, 3 pelvis, 5 radius, 7 rib, 5 scapula, 3 tarsal, 3 tibia, 1 vertebra).
+
+Articulated bones are kept apart from the fabric analysis, because they require specific experimental tests and analysis...
+
+```{r}
+# subset long bones () and classify by size
+
+```
+
+## Global Circular statistics
+
+### Rose diagrams & Kernel Density Estimates
+
+```{r}
+# circular
+bearing.circ <- circular(X.circ$marks.bearing, type="angles", units="degrees", template="geographics")
+plot(bearing.circ, cex=1, bin=36, stack=TRUE, sep=0.05, shrink=1.3)
+circular::rose.diag(bearing.circ, bins=12, col="darkgrey", prop=1.5, add=TRUE)
+lines(circular::density.circular(bearing.circ, bw=bw.cv.ml.circular(bearing.circ)))
+arrows.circular(mean(bearing.circ))
+```
+
+```{r, message=FALSE, warning=FALSE, results='hide'}
+# heR.Misc
+heR.Misc::rose(X.circ$marks.bearing, bins=36, col="red", rings=TRUE, labels=TRUE, rscale=2)
+heR.Misc::rose(X.circ$marks.bearing, bins=12, col="red", rings=TRUE, labels=TRUE, rscale=2)
+heR.Misc::rose2(X.circ$marks.bearing, nplumes=36, shrink=2, bg="white", mag.col="red", col.ring="grey", ring.labels=FALSE, cex.lab=1, cex.dir=1, main="Fig.1c")
+```
+
+The rose diagrams of the bearing show a bimodal distribution, with prevalent SE direction and another peak at SW. NE and SW orientations could be consistent with a prevalent SE direction of the flow, since long bones could roll orthogonally to the flow direction. Interesting, the W 4° deeping of the geological horizon is not reflected in a W orientation of the bones.
+
+### Two-dimensional summary statistics
+
+```{r}
+# convert degrees to radians
+plunge <- rad(X.circ$marks.plunge)
+bearing <- rad(X.circ$marks.bearing)
+
+# summary
+deg(circ.summary(bearing))
+deg(circ.summary(plunge))
+# mean
+deg(circ.mean(bearing))
+deg(circ.mean(plunge))
+# dispersion
+deg(circ.disp(bearing))
+deg(circ.disp(plunge))
+```
+
+Bearing - Sample mean direction:`r mean(bearing.circ)`; Sample mean resultant length:`r rho.circular(bearing.circ)`; Angular variance:`r angular.variance(bearing.circ)`; Standard deviation: `r sd.circular(bearing.circ)`
+
+Plunge - mean plunge: `r deg(circ.mean(plunge))`; dispersion: `r deg(circ.disp(plunge))`
+
+### Uniformity tests
+
+```{r}
+## Rayleigh test for unimodal departure from uniformity
+### tests the sample mean resultant length for uniformity against von Mises alternatives
+circular::rayleigh.test(bearing.circ)
+r.test(bearing)
+
+## Kuiper test
+### omnibus test used to detect multimodal departures from uniformity
+circular::kuiper.test(bearing.circ)
+kuiper(bearing)
+
+## Watson test
+circular::watson.test(bearing.circ)
+watson(bearing, dist = "uniform")
+watson(bearing, dist = "vm")
+
+## rao's spacing test
+circular::rao.spacing.test(bearing.circ)
+rao.spacing(bearing)
+```
+
+Rayleigh test (p-value = `r r.test(bearing)$p.value`) reject the null hypothesis of uniformity.
+
+Kuiper's Test of Uniformity reject as well the null hypothesis. Watson's goodness of fit test also reject the null hypothesis. Rao spacing test reject as well the null hypothesis of uniformity. All the omnibus tests support an anisotropic / multimodal distribution of the fossil sample, at the 99% significance level.
+
+### Equal area (Schmidt) diagrams
+
+```{r, message=FALSE, warning=FALSE}
+# equal area (schmidt) diagram
+setEPS()
+
+#postscript("./doc/artwork/Fig.eps", width=12, height=10)
+
+pdf("./doc/artwork/Schmidt.pdf", width=10, height=10)
+
+par(ps=12, cex=1, cex.main=2, cex.axis=1, cex.lab=1)
+
+net()
+qpoint(deg(bearing), 90-deg(plunge), col=4, pch=16, cex=1)
+circular::rose.diag(bearing.circ, bins=12, col="darkgrey", prop=1.5, add=TRUE)
+arrows.circular(mean(bearing.circ))
+#lowplane(360, 3.908544, col=2, UP=TRUE, PLOT=TRUE)
+
+dev.off()
+```
+
+The Schmidt diagrams show a planar fabric of the sample distribution. The points plot on the edge of the equal area hemisphere, thus indicating 0-to-low degree of plunge/plunge.
+
+### Randomness testing in three-dimensional orientation data
+
+> One problem in applying the S1/S3 test is that the eigenvector method cannot cope adeguately with certain types of multimodal data [@Woodcock1977]. For this reason the test, as with most other tests reviewed here, could wrongly return a random result from a dataset consisting of several individually significant modes or superimposed samples. [...] For this reason we recommended inspectiong the form of the data on an equal-area plot before accepting the results of any randomness test. If several modes appear to be present then some independent test for multimodality [e.g. @Bailey1975] should be made, together with some attempt to separate data from the various modes [@Kohlbeck&Scheidegger1977] before proceeding further [@Woodcock1983,p.548].
+
+Woodcock [-@Woodcock1983] test based on eigenvalue method of orientation data analysis.
+
+![](../src/Woodcock1983.png)
+
+Fig.3 Stepwise procedure for the S1/S3 test. Modified from [@Woodcock1983]
+
+```{r}
+# Angles are in radians, not f+$*@#in' degrees!!!
+plunge <- rad(X.circ$marks.plunge)
+bearing <- rad(X.circ$marks.bearing)
+
+# step 1) express each direction in the sample as a set of three direction cosines. If the data are in the form of trend and plunge, the formulae are:
+## l=cos(plunge)*cos(trend)
+l <- c(cos(plunge)*cos(bearing))
+## m=cos(plunge)*sin(trend)
+m <- c(cos(plunge)*sin(bearing))
+## n=sin(plunge)
+n <- c(sin(plunge))
+# step 2) and 3) compute the products of each direction-cosine set. sum the products over the whole data sample to give the orientation tensor
+b <- matrix(c(
+  sum(l^2),sum(l*m),sum(l*n),
+  sum(m*l),sum(m^2),sum(m*n),
+  sum(n*l),sum(n*m),sum(n^2)),
+  ncol=3, byrow=TRUE)
+# step 4) compute the eigenvectors and eigenvalues of this matrix
+## the eigenvectors (v1,v2,v3) of this matrix correspond to three orthogonal 'principal axes' of the data sample. Axis v1 is an estimate of the mean direction of the data; v3 is the pole to any girdle present in the data [@Watson1966]
+eigenvectors <- eigen(b)$vectors
+dimnames(eigenvectors) <- list(c("v1","v2","v3"),c("l","m","n"))
+## The eigenvalues (λ1,λ2,λ3), associated with (v1,v2,v3) respectively, describe the shape of the data sample [@Watson1966; @Mark1974; @Woodcock1973; @Woodcock1977]
+eigenvalues <- eigen(b)$values
+names(eigenvalues) <- c("λ1","λ2","λ3")
+```
+
+```{r, message=FALSE, warning=FALSE, results='hide'}
+## equal area (schmidt) diagram
+v1.plunge <- deg(asin(eigenvectors["v1","n"]))
+v1.bearing <- deg(acos(eigenvectors["v1","l"]/cos(asin(eigenvectors["v1","n"]))))
+v2.plunge <- deg(asin(eigenvectors["v2","n"]))
+v2.bearing <- deg(acos(eigenvectors["v2","l"]/cos(asin(eigenvectors["v2","n"]))))
+v3.plunge <- deg(asin(eigenvectors["v3","n"]))
+v3.bearing <- deg(acos(eigenvectors["v3","l"]/cos(asin(eigenvectors["v3","n"]))))
+
+net()
+# lowplane(360, 3.908544, col="red", UP=TRUE, PLOT=TRUE)
+qpoint(deg(bearing), 90-deg(plunge), col=4, pch=16, cex=1)
+qpoint(deg(v1.bearing), 90-deg(v1.plunge), col=2, pch=10, cex=2, lab="v1")
+qpoint(deg(v2.bearing), 90-deg(v2.plunge), col=2, pch=10, cex=2, lab="v2")
+qpoint(deg(v3.bearing), 90-deg(v3.plunge), col=2, pch=10, cex=2, lab="v3")
+```
+
+```{r}
+# step 5) compute the eigenvalue ratio, particularly the ratio of the largest to smallest eigenvalue (S1/S3=λ1/λ3)
+## since λ1+λ2+λ3=N then normalized eigenvalues Sj=λj/N are related by S1+S2+S3=1. A data cluster has S1>S2~=S3 and a data girdle has S1~=S2>S3
+s1 <- eigenvalues["λ1"]/length(plunge)
+s2 <- eigenvalues["λ2"]/length(plunge)
+s3 <- eigenvalues["λ3"]/length(plunge)
+s1_s2 <- s1/s2
+s2_s3 <- s2/s3
+s1_s3 <- s1/s3
+```
+
+```{r}
+## eigenvalues (Woodcock) ratio graph
+
+plot(log(s2_s3),log(s1_s2),pch=15,xlim=c(0,3),ylim=c(0,3),xlab="ln S2/S3",ylab="ln S1/S2", main="")
+## shape parameter K=ln(S1/S2)/ln(S2/S3) ranges from 0 (uniaxial girdles) to infinite (uniaxial clusters)
+abline(h=0,col="grey",lty=2)
+abline(v=0,col="grey",lty=2)
+abline(0,1,col="grey",lty=2)
+abline(0,2,col="grey",lty=2)
+abline(0,.5,col="grey",lty=2)
+abline(0,5,col="grey",lty=2)
+abline(0,.2,col="grey",lty=2)
+text(3,3,label="K=1",col="grey",lwd=.02)
+text(3,.1,label="K=0",col="grey",lwd=.02)
+text(.1,3,label="K=∞",col="grey",lwd=.02)
+text(3,.75,label="K=0.2",col="grey",lwd=.02)
+text(3,1.65,label="K=0.5",col="grey",lwd=.02)
+text(.7,3,label="K=5",col="grey",lwd=.02)
+text(1.6,3,label="K=2",col="grey",lwd=.02)
+## complementary to the shape parameter is the parameter C=ln(S1/S3) which expresses the 'strength' of the preferred orientation in the data sample [@Woodcock1977]. Strongly organized samples have larger C and plot further from the origin of the ratio graph. A perfect uniform distribution of data would have C=0 and would plot at the origin with S1=S2=S3=1/3. Random samples will also plot close to the origin and have low C values, suggesting that this parameter might be used as a test statistic for randomness
+abline(3,-1,col="grey",lty=1)
+text(1.7,1.5,label="C=3",col="grey",lwd=.02)
+abline(log(s1_s3),-1,col="red",lty=1)
+text(1.4,1,label="ln S1/S3",col="red",lwd=.02)
+##
+PlotPTsmooth(deg(bearing),deg(plunge),x=log(s2_s3),y=log(s1_s2),siz=0.2,IMAGE=TRUE,CONT=TRUE,add=TRUE)
+```
+
+```{r}
+# step 6) refer to Fig.9 or Table 1 and read off the critical S1/S3 value for the appropriate sample size and required confidence level. Note that for a small sample size a 95% confidence level is appropriate
+## for N=300 the S1/S3 critical value at 95% confidence level is: 1.34
+## for N=282?
+# step 7) if the computed value is _less_ than the test value, the data sample cannot be distinguished from a random sample at this confidence level
+s1s3_test <- read.csv(url("https://raw.githubusercontent.com/dncgst/woodcock/master/vignettes/Woodcock%26Naylor1983_fig9.csv"), header=TRUE, sep=",", skip=0)
+str(s1s3_test)
+C <- c(s1_s3,263)
+
+plot(x=s1s3_test$N, y=log(s1s3_test$X90.), type="b", col="grey", lty=2, xlim=c(0,300), xlab="Obs.", ylab="ln C", main="b")
+lines(x=s1s3_test$N, y=log(s1s3_test$X95.), type="b", col="grey", lty=2, add=TRUE)
+lines(x=s1s3_test$N, y=log(s1s3_test$X97.5.), type="b", col="grey", lty=2, add=TRUE)
+lines(x=s1s3_test$N, y=log(s1s3_test$X99.), type="b", col="grey", lty=2, add=TRUE)
+points(x=C[2], y=log(C[1]), pch=21, bg="red", col="red", cex=2, add=TRUE)
+text(10,1, label="RANDOM",col="grey", lwd=.02)
+text(25,2, label="SIGNIFICANT",col="grey",lwd=.02)
+text(183,2, label="",col="black",lwd=.02)
+```
+
+The C value (`r log(s1_s3)`) is higher than the critical S1/S3 test value (1.44) for N=300 at 99% confidence, thus the data sample reject the hypothesis of randomness in favor of a strong organized sample. The K value (`r log(s1_s2)/log(s2_s3)`) plots the data sample close to K=0, indicating uniaxial girdles (planar fabric).
+
+### Benn diagram
+
+```{r}
+# isotropy index
+is <- s3/s1
+# elongation index
+el <- 1-(s2/s1)
+# 
+bs <- 1-(is+el)
+
+# Benn diagram
+triax.plot(matrix(c(bs,el,is),ncol=3,byrow=2), show.grid=TRUE, pch=16, cex.ticks=.8, cex.axis=1, axis.labels=c("","Elongation Index\n EL=1-(S2/S1)","Isotropy Index\n IS=S3/S1"), tick.labels=list(l=seq(0.1,0.9,by=0.1), r=seq(0.1,0.9,by=0.1), b=NULL), main="Benn diagram")
+triax.points(matrix(c(bs,el,is),ncol=3,byrow=2), pch=16, cex=2, col="red")
+text(0.5,0.9,label="isotropic")
+text(-0.1,0,label="planar")
+text(1.1,0,label="linear")
+```
+
+The Benn diagram plots the distribution in the planar corner, with a very low isotropic index (`r is`) and elongation index (`r el`).
+
+#### Fig.
+
+```{r}
+# Fig. Rose diagram (a). Equal area Schimdt diagram (b). Woodcock (c) and Benn (d) diagrams.
+setEPS()
+
+pdf("./doc/manuscript/artwork/Fig:fabric_.pdf", width=30, height=10)
+
+#postscript("./doc/artwork/Fig.eps", width=12, height=10)
+
+par(mfcol=c(1,3), mar= c(6,6,6,6), ps=18, cex=1, cex.main=2, cex.axis=1, cex.lab=1)
+
+## rose diagram
+heR.Misc::rose(X.circ$marks.bearing, bins=16, col="#e41a1c", rings=TRUE, labels=TRUE, rscale=2)
+
+# Benn diagram
+# triax.plot(matrix(c(bs,el,is),ncol=3,byrow=2), show.grid=TRUE, pch=16, cex.ticks=.8, cex.axis=1, axis.labels=c("","Elongation Index\n EL=1-(S2/S1)","Isotropy Index\n IS=S3/S1"), tick.labels=list(l=seq(0.1,0.9,by=0.1), r=seq(0.1,0.9,by=0.1), b=NULL), main="a")
+# triax.points(matrix(c(bs,el,is),ncol=3,byrow=2), pch=16, cex=4, col="#595959ff")
+# text(0.5,0.9,label="isotropic")
+# text(-0.1,0,label="planar")
+# text(1.1,0,label="linear")
+
+## equal area (Schmidt) diagram
+net()
+# lowplane(360, 3.908544, col="red", UP=TRUE, PLOT=TRUE)
+qpoint(deg(bearing), 90-deg(plunge), col="#595959ff", pch=16, cex=1.5)
+qpoint(deg(v1.bearing), 90-deg(v1.plunge), col=2, pch=13, cex=3, lab="v1")
+qpoint(deg(v2.bearing), 90-deg(v2.plunge), col=2, pch=13, cex=3, lab="v2")
+qpoint(deg(v3.bearing), 90-deg(v3.plunge), col=2, pch=13, cex=3, lab="v3")
+#circular::rose.diag(bearing.circ, bins=16, col="#e41a1c", prop=1.5, add=TRUE)
+#arrows.circular(mean(bearing.circ))
+
+## eigenvalues (Woodcock) ratio graph
+plot(log(s2_s3),log(s1_s2),pch=15,xlim=c(0,3),ylim=c(0,3),xlab="ln S2/S3",ylab="ln S1/S2", main="b")
+abline(h=0,col="grey",lty=2)
+abline(v=0,col="grey",lty=2)
+abline(0,1,col="grey",lty=2)
+abline(0,2,col="grey",lty=2)
+abline(0,.5,col="grey",lty=2)
+abline(0,5,col="grey",lty=2)
+abline(0,.2,col="grey",lty=2)
+text(2.95,2.8,label="K=1",col="grey",lwd=.02)
+text(2.95,.12,label="K=0",col="grey",lwd=.02)
+text(.2,3,label=expression(paste("K=",infinity)),col="grey",lwd=.02)
+text(2.95,.75,label="K=0.2",col="grey",lwd=.02)
+text(2.95,1.65,label="K=0.5",col="grey",lwd=.02)
+text(.8,3,label="K=5",col="grey",lwd=.02)
+text(1.7,3,label="K=2",col="grey",lwd=.02)
+abline(3,-1,col="grey",lty=1)
+text(1.7,1.5,label="C=3",col="grey",lwd=.02)
+text(1.45,1.65,label="WEAK <--> STRONG",col="gray",lwd=.03,srt=45,pos=1)
+text(2.55,2.63,label="<-- CLUSTERS | GIRDLES -->",col="gray",lwd=.03,srt=-45,pos=1)
+#abline(log(s1_s3),-1,col="red",lty=1)
+#text(1.4,1,label="ln S1/S3",col="red",lwd=.02)
+PlotPTsmooth(deg(bearing),deg(plunge),x=log(s2_s3),y=log(s1_s2),siz=0.2,IMAGE=TRUE,CONT=TRUE,add=TRUE)
+
+dev.off()
+```
+
+
+## Local Circular statistics
+
+Fabric is an inherently spatially and spatiotemporally occurring phenomenon and eventally do not spread evenly across space.
+
+```{r}
+# geostatistics
+
+## convert data.frame to SpatialPointsDataFrame
+X.circ.sp <- X.circ
+X.circ.sp$y <- -X.circ.sp$y
+coordinates(X.circ.sp) <- c("y", "x")
+
+## distribution map
+spplot(X.circ.sp, "bearing")
+
+## spatial correlation of circular data?
+plot(variogram(object=bearing~1, data=X.circ.sp, cloud=TRUE))
+plot(variogram(object=bearing~1, data=X.circ.sp))
+
+plot(variogram(bearing~1, X.circ.sp, alpha=c(0,45,90,135)))
+```
+
+## References

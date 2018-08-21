@@ -1,0 +1,191 @@
+---
+title: "Multiscale anisotropy: A spatial taphonomic study of the Late Villafranchian vertebrate assemblage of Tsiotra Vryssi, Mygdonia Basin, Greece"
+subtitle: "Point pattern analysis"
+author: "Domenico Giusti"
+bibliography: "../doc/manuscript/tsr_rr.bib"
+output: 
+  html_document: 
+    fig_caption: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, eval=TRUE, echo=FALSE, message=FALSE}
+# load required packages
+library(spatstat)
+```
+
+```{r, eval=TRUE, echo=FALSE, message=FALSE}
+getwd()
+```
+
+## Reading and subsetting data
+
+```{r}
+summary(X.ppp)
+plot(X.ppp, which.marks="type.y")
+plot(X.ppp, which.marks="length.x")
+plot(X.ppp, which.marks="integrity")
+plot(X.ppp, which.marks="articulation")
+plot(X.ppp[X.ppp$marks$articulation == "isolated"], which.marks="voorhies.group")
+```
+
+## Exploratory data analysis
+
+```{r}
+# intensity
+plot(density.ppp(X.ppp, sigma=bw.diggle, diggle=TRUE)); plot(X.ppp, which.marks="length.x", col="white", add=TRUE)
+
+plot(adaptive.density(X.ppp, f=0.5, nrep=10))
+
+plot(nndensity(X.ppp, k=10))
+
+# maximum likelihood Allard-Fraley cluster set
+plot(clusterset(unmark(X.ppp)))
+
+# nearest-neighbour cleaning
+plot(nnclean(unmark(X.ppp), k=10, plothist=TRUE))
+
+# correlation
+plot(spatstat::envelope(X.ppp, Kest, nsim=19))
+plot(spatstat::envelope(X.ppp, pcf, nsim=19))
+
+plot(spatstat::envelope(X.ppp, Kinhom, nsim=19))
+plot(spatstat::envelope(X.ppp, pcfinhom, nsim=19))
+```
+
+### Fig
+
+```{r}
+
+```
+
+```{r}
+# scatterplot3d
+library(scatterplot3d)
+
+X.ppp$marks$pcolr[X.ppp$marks$type.x == "Bone"] <- "red" 
+X.ppp$marks$pcolr[X.ppp$marks$type.x == "Tooth"] <- "blue" 
+X.ppp$marks$pcolr[X.ppp$marks$type.x == "Bone/Tooth"] <- "green" 
+
+scatterplot3d(X.ppp$x, X.ppp$y, X.ppp$marks$z.x, pch=19, color=X.ppp$marks$pcolr, xlab="x", ylab="y", zlab="z", grid=TRUE, box=FALSE, angle=75)
+
+# rgl
+library(rgl)
+
+plot3d(X.ppp$x, X.ppp$y, X.ppp$marks$z.x, type="p", xlab="x", ylab="y", zlab="z", box=FALSE, aspect=1)
+
+rgl.open()
+rgl.bg(color="white")
+rgl.points(X.ppp$x, X.ppp$y, X.ppp$marks$z.x, type="p")
+```
+
+## Detecting anisotropy
+
+### Fry plot
+
+```{r}
+# fry plot
+fryplot(unmark(X.ppp))
+Y.ppp <- split(X.ppp, "type.y")
+fryplot(unmark(Y.ppp$Bone))
+fryplot(unmark(Y.ppp$Tooth))
+fryplot(unmark(Y.ppp$`Bone/Tooth`))
+```
+
+### Sector K-function
+
+```{r}
+# sector K-function (0°: E)
+Khoriz <- Ksector(unmark(X.ppp), begin=-15, end=15, units="degrees")
+plot(Khoriz)
+plot(spatstat::envelope(unmark(X.ppp), Ksector, begin=-15, end=15, units="degrees", nsim=19, global=FALSE))
+
+# sector K-function (90°: N)
+Kvert <- Ksector(unmark(X.ppp), begin=90-15, end=90+15, units="degrees")
+plot(Kvert)
+plot(spatstat::envelope(unmark(X.ppp), Ksector, begin=90-15, end=90+15, units="degrees", nsim=19, global=FALSE))
+
+# Anisotropy would be suggested if these two functions appeared to be unequal. We may then compare them by superimposing the plots, or by using eval.fv to compute the difference between the functions
+plot(Khoriz, trans/theo ~ r, lty=2, xlim=c(0.0,0.2))
+plot(Kvert, trans/theo ~ r, add=TRUE)
+plot(eval.fv(Khoriz - Kvert), legend=FALSE)
+
+plot(varblock(unmark(X.ppp), dK, confidence=0.95))
+
+# sector K-function (135°: SE-NW)
+k135 <- Ksector(unmark(X.ppp), begin=120, end=150, units="degrees")
+plot(k135)
+plot(spatstat::envelope(unmark(X.ppp), Ksector, begin=120, end=150, units="degrees", nsim=19, global=FALSE))
+plot(spatstat::envelope(unmark(X.ppp), Ksector, begin=300, end=330, units="degrees", nsim=19, global=FALSE))
+
+# sector K-function (45°: NE)
+k45 <- Ksector(unmark(X.ppp), begin=30, end=60, units="degrees")
+plot(k45)
+plot(spatstat::envelope(unmark(X.ppp), Ksector, begin=30, end=60, units="degrees", nsim=19, global=FALSE))
+
+# eval.fv (135 vs 45)
+plot(k135, trans/theo ~ r, lty=2, xlim=c(0.0,0.2))
+plot(k45, trans/theo ~ r, add=TRUE)
+plot(eval.fv(k135 - k45), legend=FALSE)
+plot(eval.fv(k45 - k135), legend=FALSE)
+```
+
+### Pair orientation distribution
+
+```{r}
+# point pair orientatin distribution
+## probability density of angles
+spatstat::rose(pairorient(unmark(X.ppp), r1=0.01, r2=0.25, unit="degree", sigma=5), main="r=0.25")
+spatstat::rose(pairorient(unmark(X.ppp), r1=0.01, r2=0.5, unit="degree", sigma=5), main="r=0.5")
+spatstat::rose(pairorient(unmark(X.ppp), r1=0.01, r2=0.75, unit="degree", sigma=5), main="r=0.75")
+spatstat::rose(pairorient(unmark(X.ppp), r1=0.01, r2=1, unit="degree", sigma=5), main="r=1")
+spatstat::rose(pairorient(unmark(X.ppp), r1=0.01, r2=1.25, unit="degree", sigma=5), main="r=1.25")
+spatstat::rose(pairorient(unmark(X.ppp), r1=0.01, r2=1.5, unit="degree", sigma=5), main="r=1.5")
+spatstat::rose(pairorient(unmark(X.ppp), r1=0.01, r2=1.75, unit="degree", sigma=5), main="r=1.75")
+
+# nearest-neighbour orientation distribution
+spatstat::rose(nnorient(unmark(X.ppp)))
+```
+
+#### Fig
+
+```{r}
+# Fig. Pair orientation distribution
+setEPS()
+
+#postscript("./doc/artwork/Fig.eps", width=12, height=10)
+
+pdf("./doc/manuscript/artwork/Fig:ppp_.pdf", width=20, height=20, family="Helvetica")
+
+nf <- layout(matrix(c(1,2,3,4,5,6), 2, 3, byrow = TRUE), widths=c(1,1), heights=c(1,1))
+layout.show(nf)
+
+par(ps=18, cex=1, cex.main=2, cex.axis=1, cex.lab=1)
+
+spatstat::rose(pairorient(unmark(X.ppp), r1=0.01, r2=0.25, unit="degree", sigma=5), main="r=0.25", col="#595959ff")
+spatstat::rose(pairorient(unmark(X.ppp), r1=0.01, r2=0.5, unit="degree", sigma=5), main="r=0.5", col="#595959ff")
+spatstat::rose(pairorient(unmark(X.ppp), r1=0.01, r2=0.75, unit="degree", sigma=5), main="r=0.75", col="#595959ff")
+spatstat::rose(pairorient(unmark(X.ppp), r1=0.01, r2=1, unit="degree", sigma=5), main="r=1", col="#595959ff")
+spatstat::rose(pairorient(unmark(X.ppp), r1=0.01, r2=1.25, unit="degree", sigma=5), main="r=1.25", col="#595959ff")
+spatstat::rose(pairorient(unmark(X.ppp), r1=0.01, r2=1.5, unit="degree", sigma=5), main="r=1.5", col="#595959ff")
+
+dev.off()
+```
+
+
+### Anisotropic pair correlation function
+
+```{r}
+ganiso <- Kmeasure(X.ppp, sigma=0.2, eps=0.01)
+plot(ganiso)
+```
+
+### Nearest-neighbour orientation distribution
+
+```{r}
+spatstat::rose(nnorient(unmark(X.ppp), unit="degree", sigma=10))
+```
+

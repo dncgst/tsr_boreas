@@ -1,0 +1,50 @@
+This is BibTeX, Version 0.99d (TeX Live 2016/Debian)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
+The top-level auxiliary file: tsr_rr.aux
+The style file: elsarticle-harv.bst
+Database file #1: tsr_rr.bib
+Warning--string name "december" is undefined
+--line 503 of file tsr_rr.bib
+Warning--empty school in Boaz1982
+You've used 83 entries,
+            2821 wiz_defined-function locations,
+            1224 strings with 24354 characters,
+and the built_in function-call counts, 44076 in all, are:
+= -- 4487
+> -- 2307
+< -- 69
++ -- 877
+- -- 774
+* -- 3923
+:= -- 7812
+add.period$ -- 267
+call.type$ -- 83
+change.case$ -- 680
+chr.to.int$ -- 85
+cite$ -- 84
+duplicate$ -- 1600
+empty$ -- 2986
+format.name$ -- 1030
+if$ -- 8932
+int.to.chr$ -- 5
+int.to.str$ -- 1
+missing$ -- 92
+newline$ -- 297
+num.names$ -- 351
+pop$ -- 659
+preamble$ -- 1
+purify$ -- 582
+quote$ -- 0
+skip$ -- 1214
+stack$ -- 0
+substring$ -- 2524
+swap$ -- 273
+text.length$ -- 15
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 711
+warning$ -- 1
+while$ -- 389
+width$ -- 0
+write$ -- 965
+(There were 2 warnings)

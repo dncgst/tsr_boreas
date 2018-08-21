@@ -1,0 +1,483 @@
+---
+title: "Spatial taphonomy of the Late Villafranchian vertebrate locality of Tsiotra Vryssi, Mygdonia Basin, Greece"
+subtitle: "Exploratory Data Analysis"
+author: "Domenico Giusti"
+bibliography: "../doc/manuscript/tsr_rr.bib"
+output: 
+  html_document: 
+    fig_caption: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r, eval=TRUE, echo=FALSE, message=FALSE}
+# load required packages
+library(readxl)
+library(ggplot2)
+```
+
+```{r, eval=TRUE, echo=FALSE, message=FALSE}
+getwd()
+```
+
+## Reading and subsetting data
+
+```{r, eval=FALSE, echo=FALSE}
+# read TotalStation shared Excel file (.xlsx)
+tsr_totalstation_all <- read_xlsx("~/Dropbox/TSR_database/tsr_totalstation_all.xlsx", sheet = "tsr_totalstation_all", col_names=TRUE, col_types=NULL)
+write.csv(tsr_totalstation_all, "./data/tsr_totalstation_all.csv", na="NA")
+tsr_totalstation_all <- read.csv("./data/tsr_totalstation_all.csv", header=TRUE, sep=",")
+str(tsr_totalstation_all)
+
+tsr_totalstation_all[1] <- NULL 
+tsr_totalstation_all$id <- as.factor(tsr_totalstation_all$id)
+tsr_totalstation_all$suffix <- as.factor(tsr_totalstation_all$suffix)
+tsr_totalstation_all$spit <- as.factor(tsr_totalstation_all$spit)
+tsr_totalstation_all$plunge <- gsub(pattern=" [A-Z]+$", replacement="", x=tsr_totalstation_all$plunge, ignore.case=FALSE)
+tsr_totalstation_all$plunge <- as.integer(tsr_totalstation_all$plunge)
+tsr_totalstation_all$date <- as.Date(tsr_totalstation_all$date, format="%m/%d/%Y")
+
+summary(tsr_totalstation_all)
+```
+
+```{r, eval=FALSE, echo=FALSE}
+# read Konidaris shared Excel file (.xlsx)
+tsr_fossil_list <- read_xlsx("~/Dropbox/TSR_database/tsr_fossil_list.xlsx", sheet = "TSR", col_names=TRUE, col_types=NULL)
+write.csv(tsr_fossil_list, "./data/tsr_fossil_list.csv", na="NA")
+tsr_fossil_list <- read.csv("./data/tsr_fossil_list.csv", header=TRUE, sep=",")
+str(tsr_fossil_list)
+
+tsr_fossil_list[1] <- NULL
+tsr_fossil_list$year <- as.factor(tsr_fossil_list$year)
+tsr_fossil_list$suffix <- as.factor(tsr_fossil_list$suffix)
+
+summary(tsr_fossil_list)
+```
+
+```{r}
+## merge the 2 datasets
+X <- merge(tsr_totalstation_all, tsr_fossil_list, by=c("unit","id","suffix"), all.y=TRUE)
+```
+
+## EDA
+
+```{r}
+## subset stratified specimens with distinctive coordinates - no bucket finds - from Geo 4 (the filter is excluding finds from 2014 as well)
+X <- subset(X, stratified.surface == "stratified" & geo.y == "4") 
+
+# subset record with no coordinates
+X <- subset(X, !is.na(X$x))
+X <- subset(X, X$type.x != "Collected finds")
+# subset fossil remains: exclude 1 coprolites, 2 micromammals
+X <- subset(X, type.y %in% c("Bone","Bone/Tooth","Tooth"))
+X$type.y <- factor(X$type.y)
+
+summary(X)
+plot(-X$y, X$x)
+write.csv(X, "./data/X.csv", na="NA")
+
+# select records within the window -> tsr_spR_geostatistics
+X.df <- as.data.frame(X.sp)
+write.csv(X.df, "./data/X.df.csv", na="NA")
+summary(X.df)
+plot(X.df$mx, X.df$my)
+
+# Y is for faunal analysis only, X for spatial taphonomy
+# select only mammals and NA for faunal analysis
+Y <- X.df 
+summary(Y)
+Y <- subset(Y, Y$marks.class == "Mammalia")
+```
+
+### Spatial distribution
+
+```{r}
+# read shapefile of the contact between geo 3 and 4
+geo3.4 <- readOGR("./data/shp/", layer="projected_Geo3.4_contact")
+geo3.4 <- tidy(geo3.4)
+
+# read shapefile of the excavation area
+win <- rgdal::readOGR("./data/shp/bbox.shp")
+win <- tidy(win)
+```
+
+#### Fig.
+
+```{r}
+# fig.3a projected (x) vertical distribution of finds
+summary(X.sp)
+
+a <- ggplot() + geom_line(data=geo3.4, aes(long,lat), color="grey") + scale_x_reverse() + coord_fixed(ratio=2) + xlab("y") + ylab("z") + theme_bw() + ggtitle("a") + geom_point(data=X.df[which(X.df$marks.type.y %in% c("Bone","Bone/Tooth","Tooth")),], aes(x=-mx, y=marks.z.x, color=factor(marks.type.y), shape=factor(marks.integrity))) + scale_shape_manual(values=c(19,1)) + theme(legend.position="none")
+a
+
+# fig.7 horizontal spatial distribution of fossils
+b <- ggplot() + geom_polygon(data=win, aes(lat,long), color="grey", fill="white", alpha=.3) + scale_x_reverse() + coord_fixed() + xlab("y") + ylab("x") + theme_bw() + ggtitle("b") + geom_point(data=X.df[which(X.df$marks.type.y %in% c("Bone","Bone/Tooth","Tooth")),], aes(x=-mx, y=my, color=factor(marks.type.y), shape=factor(marks.integrity))) + scale_shape_manual(values=c(19,1)) + theme(legend.title=element_blank(), legend.position=c(.93,.95))
+b
+
+setEPS()
+
+pdf("./doc/manuscript/artwork/Fig:map_b.pdf", width=7.48, family="Helvetica")
+
+#postscript("./artwork/Fig.eps", width=20, height=20, family="Helvetica")
+
+par(mar= c(6,6,6,6), ps=7, cex=1, cex.main=2, cex.axis=1, cex.lab=1)
+par(ps=7, cex=1, cex.main=2, cex.axis=1, cex.lab=1)
+
+multiplot(a, b, rows=2)
+
+dev.off()
+```
+
+#### Fig.
+
+```{r}
+# fig.3b vertical distribution of finds (boxplot)
+ggplot(X, aes(x=type, y=z, color=type)) + geom_boxplot() + theme_bw() + ggtitle("Fig.3b")
+# fig.3c vertical distribution of finds (violin)
+ggplot(fossil4, aes(x=type, y=z, color=type)) + geom_violin() + theme_bw() + ggtitle("") + theme(legend.position="none")
+# fig.3d vertical distribution of finds (density)
+ggplot(fossil4, aes(x=z, ..density.., color=type)) + geom_freqpoly() + coord_flip() + theme_bw() + ggtitle("Fig.3d")
+# fig.4 length~z
+ggplot(data=fossil4[which(fossil4$type == "Bone"),], aes(x=length, y=z, size=width, color=type)) + geom_point() + xlim(0,400) + geom_smooth(method="lm") + theme_bw() + ggtitle("") + theme(legend.position="none")
+```
+
+Fig.3a-d shows the projected (a) and the relative (b-d) vertical distribution of fossil types. The density of teeth is clearly higher in the sequence with respect to bones, which are uniformly spread.
+
+The concentration of teeth and bones at about -3.6m below the datum seems to be localized between 22.5 < y > 17.5. The visual interpretation of the projected evelations suggests that this spot could have been a small topographic depression at the contact between Geo 3 and 4, thus working as a fossil trap.
+
+Although the small extension of the excavated area, the plot of the projected contact points between Geo 3 and 4 (grey line in Fig.3a) shows an overall slight W deeping [2] and a N/S waved surface, with no evident deeping trend.
+
+[2] E point: y=14.222, z=-3.296 -- W point: y=23.883, z=-3.656 --> 0.66m in 9.66m --> `r atan((0.66/sqrt(0.66^2+9.66^2))/(9.66/sqrt(0.66^2+9.66^2)))`radians --> **`r atan((0.66/sqrt(0.66^2+9.66^2))/(9.66/sqrt(0.66^2+9.66^2)))*180/pi`°**
+
+Fig.4 plots the bone dimension (length) as function of the third coordinate (z). There is no clear size sorting in the vertical distribution of bones. At -3.6m below the datum, where Fig.3 shows the highest density of teeth, there is no evindent vertical bone size selection.
+
+#### 3D distribution
+
+```{r}
+# scatterplot3d
+library(scatterplot3d)
+scatterplot3d(x=-X$y, y=X$x, z=X$z.x, scale.y=1, color="grey", pch=1, main="Fossil Geo4")
+
+# plot3D
+library(plot3D)
+points3D(x=-X$y, y=X$x, z=X$z.x, col="grey", theta=0, phi=30, scale=1, xlab="y", ylab="x", zlab="z") 
+points3D(x=ursus$y, y=ursus$x, z=ursus$z, col="red", pch=18, cex=3, add=TRUE)
+
+#rgl
+library(rgl)
+rgl.open()
+rgl.bg(color="white")
+rgl.points(x=-X$y, y=X$x, z=X$z.x, color="grey", size=5)
+rgl.bbox(color="lightgray", xlen=10, ylen=4, zlen=4)
+aspect3d(2,1,1)
+## r3d interface
+get_colors <- function(groups, group.col = palette()){
+  groups <- as.factor(groups)
+  ngrps <- length(levels(groups))
+  if(ngrps > length(group.col)) 
+    group.col <- rep(group.col, ngrps)
+  color <- group.col[as.numeric(groups)]
+  names(color) <- as.vector(groups)
+  return(color)
+}
+
+open3d()
+plot3d(x=-X$y, y=X$x, z=X$z.x, type="s", col=get_colors(X$type.x), radius=0.05, xlim=c(-23,-13), ylim=c(2,6), xlab="", ylab="", zlab="", aspect=FALSE, axes=TRUE, box=FALSE)
+bbox3d(xunit=1, yunit=1, xlen=10, ylen=4, color=c("white","black"), alpha=0.8)
+grid3d(side="z", at=NULL, col="lightgrey")
+grid3d(side="x+", at=NULL, col="lightgrey")
+grid3d(side="y+", at=NULL, col="lightgrey")
+
+# writeWebGL: write scene to HTML
+filename <- writeWebGL(dir = file.path(tempdir(), "webGL"), 
+                       width = 500, reuse = TRUE)
+attr(filename, "reuse")
+if (interactive())
+    browseURL(paste0("file://", filename))
+
+# plotly
+library(plotly)
+p <- plot_ly(X, x=-X$y, y=X$x, z=X$z.x, color=X$type.x) %>%
+  add_markers() %>%
+  layout(scene = list(xaxis = list(title = 'x'),
+                     yaxis = list(title = 'y'),
+                     zaxis = list(title = 'z')))
+p
+chart_link = plotly_POST(p, filename="scatter3d/basic")
+chart_link
+
+#
+rgl.open()
+shade3d(oh3d(), color = "red")
+rgl.viewpoint(0, 20)
+for (i in 1:45) {
+rgl.viewpoint(i, 20)
+filename <- paste("pic", formatC(i, digits = 1, flag = "0"), ".eps", sep = "")
+rgl.postscript(filename, fmt = "eps")
+}
+
+ursus <- X[which(X$genus == "Ursus" & X$suffix == 0),]
+plot3d(x=-ursus$y, y=ursus$x, z=ursus$z.x, type="s", col="red", radius=0.1, add=TRUE)
+
+rgl.viewpoint(theta=10,phi=10,fov=0)
+snapshot3d("persp3d1.png","png", top=TRUE)
+rgl.postscript("persp3d3.pdf","pdf")
+```
+
+### Taxonomy
+
+```{r}
+# frequency distribution of taxa ()
+##ggplot(X[which(X$class %in% c("?Mammalia","Mammalia")),], aes(x=reorder(family, family, function(x)-length(x)))) + geom_bar() + theme_bw() + theme(axis.title.x = element_blank())
+
+ggplot(Y, aes(x=reorder(class, class, function(x)-length(x)))) + geom_bar() + coord_flip() + theme_bw() + theme(axis.title.x = element_blank()) + ggtitle("a")
+
+ggplot(Y[which(Y$class == "Mammalia"),], aes(x=reorder(order, order, function(x)-length(x)))) + geom_bar() + theme_bw() + theme(axis.title.x = element_blank())
+
+ggplot(Y[which(Y$order %in% c("Perissodactyla","Artiodactyla","Carnivora","Proboscidea")),], aes(x=reorder(family, family, function(x)-length(x)))) + geom_bar() + theme_bw() + theme(axis.title.x = element_blank())
+
+a <- ggplot(Y[which(Y$marks.order %in% c("Perissodactyla","Artiodactyla","Carnivora","Proboscidea")),], aes(x=marks.family)) + geom_bar() + coord_flip() + scale_x_discrete(limits=c(NA,"Equidae","Bovidae","Cervidae","Rhinocerotidae","Elephantidae","Ursidae","Canidae","Giraffidae"))+ theme_bw() + theme(axis.title.y = element_blank()) + ggtitle("a")
+
+a <- ggplot(Y, aes(x=marks.family)) + geom_bar() + coord_flip() + scale_x_discrete(limits=c(NA,"Equidae","Bovidae","Cervidae","Rhinocerotidae","Elephantidae","Ursidae","Canidae","Giraffidae"))+ theme_bw() + theme(axis.title.y = element_blank()) + ggtitle("a")
+a
+
+foo <- Y[which(Y$class == "Mammalia"),]
+foo <- Y[which(Y$order %in% c("Perissodactyla","Artiodactyla","Carnivora","Proboscidea")),]
+summary(foo)
+```
+
+```{r}
+# order taxon by class/order
+ggplot(Y[which(Y$class == "Mammalia"),], aes(x=reorder(taxon, taxon, function(x)-length(x)))) + geom_bar() + theme_bw() + theme(axis.title.x = element_blank()) + theme(axis.text.x = element_text(angle = 90, hjust = 1))
+```
+
+### Taphonomy
+
+```{r}
+# frequency distribution of Voorhies groups
+ggplot(Y[which(Y$voorhies.group %in% c("I","I/II","II","II/III","III")),], aes(x=voorhies.group)) + geom_bar() + theme_bw() + theme(axis.title.x = element_blank()) + ggtitle("a")
+
+# facet
+b <- ggplot(data=Y[which(Y$marks.voorhies.group %in% c("I","I/II","II","II/III","III")),], aes(x=marks.voorhies.group)) + geom_bar() + facet_wrap(~marks.BM.category, ncol=1) + theme_bw() + theme(axis.title.x = element_blank()) + ggtitle("b")
+b
+
+# mosaic plot
+foo <- Y[which(Y$marks.voorhies.group %in% c("I","I/II","II","II/III","III")),]
+summary(foo)
+tab <- table(factor(foo$taxon), factor(foo$voorhies.group))
+summary(tab)
+tab
+
+library(vcd)
+mosaic(tab, shade=T, legend=T, split_vertical=F) #model of mutual independence
+assoc(tab, shade=T, legend=T)
+```
+
+```{r}
+# frequency distribution of Mammalian skeletal elements, isolated complete vs. fragmented specimens
+
+# facet
+ggplot(data=Y[which(Y$class == "Mammalia" & Y$articulation == "isolated"),], aes(x=skeletal.element)) + geom_bar() + coord_flip() + facet_grid(. ~ integrity) + theme_bw() + theme(axis.title.y = element_blank())
+
+ggplot(data=Y[which(Y$class == "Mammalia" & Y$articulation == "isolated"),], aes(x=skeletal.element)) + geom_bar() + coord_flip() + facet_grid(. ~ integrity) + theme_bw() + theme(axis.title.y = element_blank()) + scale_x_discrete(limits=c("antler","horn corns","cranium","mandible","tooth","vertebra","rib","sacrum","pelvis","scapula","humerus","radius","ulna","femur","tibia","limb bone","metapode","carpal","tarsal","carpal/tarsal","sesamoid","rotule","phalanx",NA))
+
+# back-to-back plot
+## isolated Mammal spec., not Voorhies (frags + teeth, antler)
+foo <- Y[-which(Y$marks.voorhies.group %in% c("I","I/II","II","II/III","III")),]
+foo <- foo[which(foo$marks.articulation == "isolated" & foo$marks.nsp.total != "?"),] 
+summary(foo)
+
+## Voorhies: isolated, complete Mammal spec.
+bar <- Y[which(Y$marks.voorhies.group %in% c("I","I/II","II","II/III","III")),]
+summary(bar)
+
+baz <- rbind(foo, bar)
+summary(baz)
+
+c <- ggplot(data=baz, aes(x=marks.skeletal.element)) + geom_bar(data=subset(baz, marks.integrity == "fragment")) + geom_bar(data=subset(baz, marks.integrity == "complete"), aes(y=..count..*(-1))) + coord_flip() + theme_bw() + theme(axis.title.y = element_blank()) + scale_x_discrete(limits=c("antler","cranium","mandible","tooth","vertebra","rib","sacrum","pelvis","scapula","humerus","radius","ulna","femur","tibia","limb bone","metapode","carpal","tarsal","carpal/tarsal","sesamoid","rotule","phalanx",NA)) + scale_y_continuous(breaks=seq(-150,150,50), labels=abs(seq(-150,150,50))) + ggtitle("c")
+c
+```
+
+```{r}
+# frequency distribution of articulated specimens (skeletal element) from Geo 4
+
+ggplot(Y[which(Y$articulation %in% c("articulated","isolated")),], aes(x=articulation)) + geom_bar() + theme_bw() + theme(axis.title.x = element_blank()) + ggtitle("a")
+
+foo <- Y[-which(Y$marks.voorhies.group %in% c("I","I/II","II","II/III","III")),]
+foo <- foo[which(foo$marks.articulation == "articulated" & foo$marks.type.y == "Bone" & foo$marks.skeletal.part != "?complete"),]
+summary(foo)
+
+d <- ggplot(data=foo, aes(x=marks.skeletal.part)) + geom_bar() + theme_bw() + theme(axis.title.x = element_blank()) + scale_x_discrete(limits=c("appendicular","axial")) + ggtitle("d")
+d
+
+ggplot(data=foo[-which(is.na(foo$skeletal.part)),], aes(x=taxon)) + geom_bar() + coord_flip() + theme_bw() + theme(axis.title.x = element_blank()) + ggtitle("c")
+
+ggplot(data=foo[-which(is.na(foo$skeletal.part)),], aes(x=order)) + geom_bar() + coord_flip() + theme_bw() + theme(axis.title.x = element_blank()) + ggtitle("c")
+
+# mosaic plot
+summary(foo)
+foo <- foo[-which(is.na(foo$skeletal.part)),]
+foo$order <- factor(foo$order)
+foo$skeletal.part <- factor(foo$skeletal.part)
+tab <- table(foo$order, foo$skeletal.part)
+summary(tab)
+tab
+
+library(vcd)
+mosaic(tab, shade=T, legend=T, split_vertical=F) #model of mutual independence
+assoc(tab, shade=T, legend=T)
+```
+
+```{r}
+# frequency distribution of bone portions
+ggplot(X[which(X$class %in% c("Mammalia","?Mammalia") & X$articulation == "isolated" & X$integrity == "fragment"),], aes(x=bone.portion)) + geom_bar() + theme_bw() + theme(axis.title.x = element_blank())
+```
+
+#### Fig.
+
+```{r}
+# Fig. (double column - full page width: 190mm/539pt/7.48inches; lettering: 7pt)
+setEPS()
+
+pdf("./doc/manuscript/artwork/Fig:fauna_.pdf", width=7.48, height=7.48, family="Helvetica")
+
+#postscript("./artwork/Fig.eps", width=20, height=20, family="Helvetica")
+
+par(mar= c(6,6,6,6), ps=7, cex=1, cex.main=2, cex.axis=1, cex.lab=1)
+
+multiplot(a, c, b, d, cols=2)
+
+dev.off()
+```
+
+### Particle size distribution
+
+Dimensions (length, width) have been recorded only for the bones with length >= 500mm. The subset of measured bones includes `r length(which(fossil4$type == "Bone" & fossil4$length > 0))` specimens with length > 0, and `r length(which(fossil4$type == "Bone" & fossil4$width > 0))` specimens with width > 0.
+
+```{r}
+# fig.2 scatterplot of bone dimensions
+ggplot(data=X[which(X$type.x == "Bone"),], aes(x=length.x, y=max_width)) + geom_point() + xlab("length (mm)") + ylab("width (mm)") + xlim(0,700) + theme_bw() + ggtitle("Fig.2")
+
+# 
+```
+
+Fig.2 shows that the bone dimensions range 50-400mm length and 0-150mm width, with few bigger outliers.
+
+### Vertical distribution
+
+```{r}
+# read shapefile of the contact between geo 3 and 4
+setwd("~/project/tsr_rr/")
+geo3.4 <- readOGR("./data/shp/", layer="projected_Geo3.4_contact")
+geo3.4 <- tidy(geo3.4)
+```
+
+```{r}
+#
+#ggplot(data=totalstation[which(totalstation$type=="Surface" & totalstation$geo=="3/4"),], aes(x=y, y=z)) + geom_point() + scale_x_reverse() + coord_fixed(ratio=4) + xlab("y") + ylab("z") + theme_bw() + ggtitle("Contact Geo 3/4")
+#
+#ggplot(data=totalstation[which(totalstation$type=="Surface" & totalstation$geo=="3/4" & totalstation$y>17.5 & totalstation$y<22.5),], aes(x=x, y=z)) + geom_point() + scale_x_reverse() + coord_fixed(ratio=1) + xlab("x") + ylab("z") + theme_bw() + ggtitle("Contact Geo 3/4") 
+```
+
+```{r}
+# fig.3a projected (x) vertical distribution of finds
+ggplot() + geom_line(data=geo3.4, aes(long,lat), color="grey") + scale_x_reverse() + coord_fixed(ratio=2) + xlab("y") + ylab("z") + theme_bw() + ggtitle("") + geom_point(data=X, aes(x=y, y=z.x, color=type.x)) + theme(legend.title=element_blank(), legend.position=c(.1,.3))
+# fig.3b vertical distribution of finds (boxplot)
+ggplot(fossil4, aes(x=type, y=z, color=type)) + geom_boxplot() + theme_bw() + ggtitle("Fig.3b")
+# fig.3c vertical distribution of finds (violin)
+ggplot(fossil4, aes(x=type, y=z, color=type)) + geom_violin() + theme_bw() + ggtitle("") + theme(legend.position="none")
+# fig.3d vertical distribution of finds (density)
+ggplot(fossil4, aes(x=z, ..density.., color=type)) + geom_freqpoly() + coord_flip() + theme_bw() + ggtitle("Fig.3d")
+```
+
+Fig.3a-d shows the projected (a) and the relative (b-d) vertical distribution of fossil types. The density of teeth is clearly higher in the sequence with respect to bones, which are uniformly spread.
+
+The concentration of teeth and bones at about -3.6m below the datum seems to be localized between 22.5 < y > 17.5. The visual interpretation of the projected evelations suggests that this spot could have been a small topographic depression at the contact between Geo 3 and 4, thus working as a fossil trap.
+
+Although the small extension of the excavated area, the plot of the projected contact points between Geo 3 and 4 (grey line in Fig.3a) shows an overall slight W deeping [2] and a N/S waved surface, with no evident deeping trend.
+
+[2] E point: y=14.222, z=-3.296 -- W point: y=23.883, z=-3.656 --> 0.66m in 9.66m --> `r atan((0.66/sqrt(0.66^2+9.66^2))/(9.66/sqrt(0.66^2+9.66^2)))`radians --> **`r atan((0.66/sqrt(0.66^2+9.66^2))/(9.66/sqrt(0.66^2+9.66^2)))*180/pi`°**
+
+```{r}
+# fig.4 length~z
+ggplot(data=fossil4[which(fossil4$type == "Bone"),], aes(x=length, y=z, size=width, color=type)) + geom_point() + xlim(0,400) + geom_smooth(method="lm") + theme_bw() + ggtitle("") + theme(legend.position="none")
+```
+
+Fig.4 plots the bone dimension (length) as function of the third coordinate (z). There is no clear size sorting in the vertical distribution of bones. At -3.6m below the datum, where Fig.3 shows the highest density of teeth, there is no evindent vertical bone size selection.
+
+```{r}
+# fig.5a projected vertical distribution of articulation degree
+#ggplot() + geom_line(data=geo3.4, aes(long,lat), color="grey") + scale_x_reverse() + coord_fixed(ratio=2) + xlab("y") + ylab("z") + theme_bw() + ggtitle("Fig.5a") + geom_point(data=fossil4[which(fossil4$collected == "yes" & fossil4$type == "Bone"),], aes(x=y, y=z, color=articulation))
+```
+
+```{r}
+# fig. 5b
+#ggplot(data=fossil4[which(fossil4$collected == "yes" & fossil4$type == "Bone"),], aes(x=z, ..density.., color=articulation)) + geom_freqpoly() + coord_flip() + theme_bw() + ggtitle("Fig.5b")
+```
+
+Fig.5 plots the projected vertical distribution of degrees of bone articulation (isolated, associated, articulated). Articulated bones occur through the complete sequence, but with higher intensity at lower elevations. Above -3.6m from the datum, only `r length(which(fossil4$articulation %in% c("articulated","associated","possibly associated") & fossil4$z > median(fossil4$z[which(fossil4$type == "Tooth")])))` bones are articulated:
+
+```{r, eval=TRUE, echo=FALSE}
+fossil4[which(fossil4$articulation %in% c("articulated","associated","possibly associated") & fossil4$z > median(fossil4$z[which(fossil4$type == "Tooth")])),c(1,2,3,20)]
+```
+
+### Horizontal distribution
+
+```{r, eval=TRUE, echo=FALSE}
+# window
+setwd("~/project/tsr_rr/")
+win <- rgdal::readOGR("./data/shp/bbox.shp") 
+
+proj4string=CRS(as.character(NA))) #import shp as SpatialPolygonsDataframe
+#win <- as(win, "SpatialPolygons") #change to SpatialPolygons
+#proj4string(shp) #check reference system = NA
+#bbox(shp) #check the extension of the bounding box
+#plot(shp)
+#win <- fortify(shp)
+win <- tidy(win)
+```
+
+```{r}
+# fig.6 length~xy
+ggplot() + geom_polygon(data=win, aes(lat,long), color="grey", fill="white", alpha=.3) + scale_x_reverse() + coord_fixed() + xlab("y") + ylab("x") + theme_bw() + ggtitle("Fig.6") +  geom_point(data=X[which(X$type.x == "Bone"),], aes(x=y, y=x, size=length.x, color=type.x)) + geom_point(data=X[which(X$type.x == "Tooth"),], aes(x=y, y=x, color=type.x))
+```
+
+Fig.6 plots the horizontal spatial dispersion of the fossils. There is no clear size sorting in the horizontal distribution of bones.
+
+```{r}
+# fig.7 horizontal spatial distribution of fossils
+ggplot() + geom_polygon(data=win, aes(lat,long), color="grey", fill="white", alpha=.3) + scale_x_reverse() + coord_fixed() + xlab("y") + ylab("x") + theme_bw() + ggtitle("") + geom_point(data=X, aes(x=y, y=x, color=type.x)) + theme(legend.title=element_blank(), legend.position=c(.9,.8))
+```
+
+The visual interpretation of Fig.7 suggests preferential spatial distributions of fossils along NW-SE axes, alternated with lower concentrations of remains. This pattern would be consistent with a repeated depositional events model. (Alternatively, we can interpret the figure as NW-SE oriented empty-spaced channels in the distribution of fossils, putting the attenction on possible erosional patterns)
+
+```{r}
+# fig.8a projected vertical distribution of finds
+ggplot() + geom_line(data=geo3.4, aes(long,lat), color="grey") + scale_x_reverse() + coord_fixed(ratio=4) + xlab("y") + ylab("z") + theme_bw() + ggtitle("Fig.8a") + geom_point(data=fossil4[which(fossil4$z > median(fossil4$z[which(fossil4$type == "Tooth")])),], aes(x=y, y=z, color=type))
+# fig.8b horizontal spatial distribution of fossils: z > `r median(fossil4$z[which(fossil4$type == "Tooth")])`
+ggplot() + geom_polygon(data=win, aes(lat,long), color="grey", fill="white", alpha=.3) + scale_x_reverse() + coord_fixed(ratio=.3) + xlab("y") + ylab("x") + theme_bw() + ggtitle("Fig.8b") + geom_point(data=fossil4[which(fossil4$z > median(fossil4$z[which(fossil4$type == "Tooth")])),], aes(x=y, y=x, color=type))
+```
+
+```{r}
+# fig.9a projected vertical distribution of finds
+ggplot() + geom_line(data=geo3.4, aes(long,lat), color="grey") + scale_x_reverse() + coord_fixed(ratio=1) + xlab("y") + ylab("z") + theme_bw() + ggtitle("Fig.9a") + geom_point(data=fossil4[which(fossil4$z < median(fossil4$z[which(fossil4$type == "Tooth")])),], aes(x=y, y=z, color=type))
+# fig.9b horizontal spatial distribution of fossils: z < `r median(fossil4$z[which(fossil4$type == "Tooth")])`
+ggplot() + geom_polygon(data=win, aes(lat,long), color="grey", fill="white", alpha=.3) + scale_x_reverse() + coord_fixed(ratio=.3) + xlab("y") + ylab("x") + theme_bw() + ggtitle("Fig.9b") + geom_point(data=fossil4[which(fossil4$z < median(fossil4$z[which(fossil4$type == "Tooth")])),], aes(x=y, y=x, color=type))
+```
+
+In the hypothesis that the deposition of teeth above -3.6m from the datum is due to a subsequent event, figures 7 and 8 show the vertical discriminated distribution of fossils. The threshold elevation is based on the median evevation of teeth: `r median(fossil4$z[which(fossil4$type == "Tooth")])`.
+
+```{r}
+# fig.10 species distribution
+# fig. ursus distribution
+ggplot() + geom_polygon(data=win, aes(lat,long), color="grey", fill="white", alpha=.3) + scale_x_reverse() + coord_fixed() + xlab("y") + ylab("x") + theme_bw() + geom_point(data=fossil4[-which(fossil4$genus == "Ursus"),], aes(x=y, y=x), color="grey") + geom_point(data=fossil4[which(fossil4$genus == "Ursus"),], aes(x=y, y=x, color=type))
+```
+
+```{r}
+# fig.11 refitting/conjoint distance
+```
+
+
+
