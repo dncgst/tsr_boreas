@@ -9,7 +9,7 @@ By applying advanced spatial statistical methods, spatial taphonomy complements 
 
 ## Repository DOI
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1435771.svg)](https://doi.org/10.5281/zenodo.1435771)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.1435836.svg)](https://doi.org/10.5281/zenodo.1435836)
 
 The files archived at the DOI above are associated with the publication. The files hosted at github.com are the development versions and may have changed since the repository was published.
 
