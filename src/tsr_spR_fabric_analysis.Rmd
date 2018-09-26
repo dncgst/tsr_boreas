@@ -62,17 +62,6 @@ X.circ <- X.circ[-which(X.circ$marks.type.y == "Tooth"),]
 summary(X.circ)
 ```
 
-Circular statistics are applied to a subset of `r length(X.circ$articulation)` isolated specimens (not articulated) from Geo 4, for which plunge,bearing and length were recorded and length >= 2cm. The subset of material was collected from 2015 to 2017.
-
-The material includes 24 complete bones (1 femur, 12 metapode, 2 phalanx, 1 radius/fibula, 1 rib, 4 scapula, 2 tarsal, 1 ulna) and 239 fragmented bones (64 ?, 1 ?femur, 1 antler, 1 cranium, 1 femur, 4 humerus, 132 limb bone, 1 mandible, 7 metapode, 3 pelvis, 5 radius, 7 rib, 5 scapula, 3 tarsal, 3 tibia, 1 vertebra).
-
-Articulated bones are kept apart from the fabric analysis, because they require specific experimental tests and analysis...
-
-```{r}
-# subset long bones () and classify by size
-
-```
-
 ## Global Circular statistics
 
 ### Rose diagrams & Kernel Density Estimates
@@ -93,8 +82,6 @@ heR.Misc::rose(X.circ$marks.bearing, bins=12, col="red", rings=TRUE, labels=TRUE
 heR.Misc::rose2(X.circ$marks.bearing, nplumes=36, shrink=2, bg="white", mag.col="red", col.ring="grey", ring.labels=FALSE, cex.lab=1, cex.dir=1, main="Fig.1c")
 ```
 
-The rose diagrams of the bearing show a bimodal distribution, with prevalent SE direction and another peak at SW. NE and SW orientations could be consistent with a prevalent SE direction of the flow, since long bones could roll orthogonally to the flow direction. Interesting, the W 4° deeping of the geological horizon is not reflected in a W orientation of the bones.
-
 ### Two-dimensional summary statistics
 
 ```{r}
@@ -112,10 +99,6 @@ deg(circ.mean(plunge))
 deg(circ.disp(bearing))
 deg(circ.disp(plunge))
 ```
-
-Bearing - Sample mean direction:`r mean(bearing.circ)`; Sample mean resultant length:`r rho.circular(bearing.circ)`; Angular variance:`r angular.variance(bearing.circ)`; Standard deviation: `r sd.circular(bearing.circ)`
-
-Plunge - mean plunge: `r deg(circ.mean(plunge))`; dispersion: `r deg(circ.disp(plunge))`
 
 ### Uniformity tests
 
@@ -140,10 +123,6 @@ circular::rao.spacing.test(bearing.circ)
 rao.spacing(bearing)
 ```
 
-Rayleigh test (p-value = `r r.test(bearing)$p.value`) reject the null hypothesis of uniformity.
-
-Kuiper's Test of Uniformity reject as well the null hypothesis. Watson's goodness of fit test also reject the null hypothesis. Rao spacing test reject as well the null hypothesis of uniformity. All the omnibus tests support an anisotropic / multimodal distribution of the fossil sample, at the 99% significance level.
-
 ### Equal area (Schmidt) diagrams
 
 ```{r, message=FALSE, warning=FALSE}
@@ -165,17 +144,7 @@ arrows.circular(mean(bearing.circ))
 dev.off()
 ```
 
-The Schmidt diagrams show a planar fabric of the sample distribution. The points plot on the edge of the equal area hemisphere, thus indicating 0-to-low degree of plunge/plunge.
-
 ### Randomness testing in three-dimensional orientation data
-
-> One problem in applying the S1/S3 test is that the eigenvector method cannot cope adeguately with certain types of multimodal data [@Woodcock1977]. For this reason the test, as with most other tests reviewed here, could wrongly return a random result from a dataset consisting of several individually significant modes or superimposed samples. [...] For this reason we recommended inspectiong the form of the data on an equal-area plot before accepting the results of any randomness test. If several modes appear to be present then some independent test for multimodality [e.g. @Bailey1975] should be made, together with some attempt to separate data from the various modes [@Kohlbeck&Scheidegger1977] before proceeding further [@Woodcock1983,p.548].
-
-Woodcock [-@Woodcock1983] test based on eigenvalue method of orientation data analysis.
-
-![](../src/Woodcock1983.png)
-
-Fig.3 Stepwise procedure for the S1/S3 test. Modified from [@Woodcock1983]
 
 ```{r}
 # Angles are in radians, not f+$*@#in' degrees!!!
@@ -299,9 +268,7 @@ text(-0.1,0,label="planar")
 text(1.1,0,label="linear")
 ```
 
-The Benn diagram plots the distribution in the planar corner, with a very low isotropic index (`r is`) and elongation index (`r el`).
-
-#### Fig.
+#### Fig.5
 
 ```{r}
 # Fig. Rose diagram (a). Equal area Schimdt diagram (b). Woodcock (c) and Benn (d) diagrams.
@@ -358,29 +325,6 @@ text(2.55,2.63,label="<-- CLUSTERS | GIRDLES -->",col="gray",lwd=.03,srt=-45,pos
 PlotPTsmooth(deg(bearing),deg(plunge),x=log(s2_s3),y=log(s1_s2),siz=0.2,IMAGE=TRUE,CONT=TRUE,add=TRUE)
 
 dev.off()
-```
-
-
-## Local Circular statistics
-
-Fabric is an inherently spatially and spatiotemporally occurring phenomenon and eventally do not spread evenly across space.
-
-```{r}
-# geostatistics
-
-## convert data.frame to SpatialPointsDataFrame
-X.circ.sp <- X.circ
-X.circ.sp$y <- -X.circ.sp$y
-coordinates(X.circ.sp) <- c("y", "x")
-
-## distribution map
-spplot(X.circ.sp, "bearing")
-
-## spatial correlation of circular data?
-plot(variogram(object=bearing~1, data=X.circ.sp, cloud=TRUE))
-plot(variogram(object=bearing~1, data=X.circ.sp))
-
-plot(variogram(bearing~1, X.circ.sp, alpha=c(0,45,90,135)))
 ```
 
 ## References

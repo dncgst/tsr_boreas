@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2018.3.15)  21 AUG 2018 19:03
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2018.9.22)  26 SEP 2018 16:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -984,41 +984,47 @@ LaTeX Info: Redefining \nameref on input line 40.
 \@outlinefile=\write4
 \openout4 = `tsr_rr.out'.
 
- [1
-
-
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Try loading font information for T1+txss on input line 76.
- (/usr/share/texlive/texmf-dist/tex/latex/txfonts/t1txss.fd
-File: t1txss.fd 2000/12/15 v3.1
-)
-LaTeX Font Info:    Font shape `T1/txss/m/n' will be
-(Font)              scaled to size 4.74998pt on input line 76.
-LaTeX Font Info:    Try loading font information for OT1+txr on input line 76.
+LaTeX Font Info:    Try loading font information for OT1+txr on input line 72.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/ot1txr.fd
 File: ot1txr.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+txmia on input line 76.
+LaTeX Font Info:    Try loading font information for U+txmia on input line 72.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxmia.fd
 File: utxmia.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+txsya on input line 76.
+LaTeX Font Info:    Try loading font information for U+txsya on input line 72.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxsya.fd
 File: utxsya.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+txsyb on input line 76.
+LaTeX Font Info:    Try loading font information for U+txsyb on input line 72.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxsyb.fd
 File: utxsyb.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Try loading font information for U+txsyc on input line 76.
+LaTeX Font Info:    Try loading font information for U+txsyc on input line 72.
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/utxsyc.fd
 File: utxsyc.fd 2000/12/15 v3.1
-) [2] [3]
+)
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 72.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+) [1
+
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+LaTeX Font Info:    Try loading font information for T1+txss on input line 76.
+
+(/usr/share/texlive/texmf-dist/tex/latex/txfonts/t1txss.fd
+File: t1txss.fd 2000/12/15 v3.1
+)
+LaTeX Font Info:    Font shape `T1/txss/m/n' will be
+(Font)              scaled to size 4.74998pt on input line 76.
+ [2] [3]
 Overfull \hbox (14.49011pt too wide) in paragraph at lines 93--94
 []\T1/txr/m/n/10 Therefore, in-te-grat-ing the re-sults of our mul-ti-scale and
  mul-ti-level anal-y-sis of anisotropy
@@ -1029,58 +1035,50 @@ Overfull \hbox (14.49011pt too wide) in paragraph at lines 93--94
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 104.
 
-<./artwork/Fig1.png, id=229, 706.50572pt x 546.25485pt>
-File: ./artwork/Fig1.png Graphic file (type png)
-
-<use ./artwork/Fig1.png>
-Package pdftex.def Info: ./artwork/Fig1.png used on input line 106.
+<artwork/Fig1.png, id=235, 706.50572pt x 546.25485pt>
+File: artwork/Fig1.png Graphic file (type png)
+ <use artwork/Fig1.png>
+Package pdftex.def Info: artwork/Fig1.png used on input line 106.
 (pdftex.def)             Requested size: 345.0pt x 266.742pt.
 
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 111.
 
-<./artwork/Fig:pics_.png, id=235, 540.5796pt x 786.2976pt>
-File: ./artwork/Fig:pics_.png Graphic file (type png)
+<artwork/Fig2.png, id=241, 483.7272pt x 634.5306pt>
+File: artwork/Fig2.png Graphic file (type png)
+ <use artwork/Fig2.png>
+Package pdftex.def Info: artwork/Fig2.png used on input line 113.
+(pdftex.def)             Requested size: 293.2521pt x 384.67162pt.
 
-<use ./artwork/Fig:pics_.png>
-Package pdftex.def Info: ./artwork/Fig:pics_.png used on input line 113.
-(pdftex.def)             Requested size: 293.2521pt x 426.55005pt.
- [5 <./artwork/Fig1.png>] [6 <./artwork/Fig:pics_.png>]
+[5 <./artwork/Fig1.png>] [6 <./artwork/Fig2.png>]
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 123.
 
-<./artwork/Fig:log_.png, id=254, 540.5796pt x 406.1574pt>
-File: ./artwork/Fig:log_.png Graphic file (type png)
-
-<use ./artwork/Fig:log_.png>
-Package pdftex.def Info: ./artwork/Fig:log_.png used on input line 126.
+<artwork/Fig3.png, id=260, 540.5796pt x 406.1574pt>
+File: artwork/Fig3.png Graphic file (type png)
+ <use artwork/Fig3.png>
+Package pdftex.def Info: artwork/Fig3.png used on input line 126.
 (pdftex.def)             Requested size: 550.0pt x 413.24628pt.
- [7] [8 <./artwork/Fig:log_.png>]
+
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `tbp') on input line 135.
 
-<./artwork/Fig:map_.pdf, id=269, 580.4968pt x 494.54369pt>
-File: ./artwork/Fig:map_.pdf Graphic file (type pdf)
-
-<use ./artwork/Fig:map_.pdf>
-Package pdftex.def Info: ./artwork/Fig:map_.pdf used on input line 137.
+<artwork/Fig4.pdf, id=264, 580.4968pt x 494.54369pt>
+File: artwork/Fig4.pdf Graphic file (type pdf)
+ <use artwork/Fig4.pdf>
+Package pdftex.def Info: artwork/Fig4.pdf used on input line 137.
 (pdftex.def)             Requested size: 345.0pt x 293.92888pt.
- [9 <./artwork/Fig:map_.pdf>] [10] [11] [12]
+
+[7] [8 <./artwork/Fig3.png>] [9 <./artwork/Fig4.pdf>] [10] [11] [12] [13]
 LaTeX Font Info:    Try loading font information for TS1+txr on input line 194.
 
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/ts1txr.fd
 File: ts1txr.fd 2000/12/15 v3.1
-) [13]
-Overfull \hbox (0.45009pt too wide) in paragraph at lines 202--203
-\T1/txr/m/n/10 wavelet ap-proach does not ap-ply any trans-for-ma-tion, but ide
-n-ti-fies the el-e-ments (points)
- []
-
-[14] [15]
+) [14] [15]
 Overfull \hbox (13.65013pt too wide) in paragraph at lines 220--221
 \T1/txr/m/n/10 pre-ferred ori-en-ta-tion of mag-netic min-er-als in rocks and u
 n-con-sol-i-dated sed-i-ments ([][]Hrouda[][],
@@ -1092,99 +1090,81 @@ Overfull \hbox (1.97012pt too wide) in paragraph at lines 248--249
 te iso-lated teeth/vertebrae
  []
 
-
-Overfull \hbox (4.71013pt too wide) in paragraph at lines 251--252
-\T1/txr/m/n/10 pro-vides an-other in-di-ca-tion of the de-gree of preser-va-tio
-n of the as-sem-blage ([][]Domínguez-
- []
-
 [18]
 LaTeX Font Info:    Font shape `T1/txss/m/n' will be
-(Font)              scaled to size 9.49997pt on input line 263.
+(Font)              scaled to size 9.49997pt on input line 261.
+ [19]
+
+LaTeX Warning: Command \textdegree invalid in math mode on input line 268.
 
 
-LaTeX Warning: Command \textdegree invalid in math mode on input line 270.
-
-
-LaTeX Warning: Command \textdegree invalid in math mode on input line 270.
-
-Missing character: There is no ° in font txr!
-
-LaTeX Warning: Command \textdegree invalid in math mode on input line 270.
-
-
-LaTeX Warning: Command \textdegree invalid in math mode on input line 270.
+LaTeX Warning: Command \textdegree invalid in math mode on input line 268.
 
 Missing character: There is no ° in font txr!
-[19]
+
+LaTeX Warning: Command \textdegree invalid in math mode on input line 268.
+
+
+LaTeX Warning: Command \textdegree invalid in math mode on input line 268.
+
+Missing character: There is no ° in font txr!
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `tbp') on input line 272.
+               Default added (so using `tbp') on input line 270.
 
-<./artwork/Fig:fabric_.pdf, id=587, 685.74817pt x 361.67519pt>
-File: ./artwork/Fig:fabric_.pdf Graphic file (type pdf)
+<./artwork/Fig5.pdf, id=593, 685.74817pt x 361.67519pt>
+File: ./artwork/Fig5.pdf Graphic file (type pdf)
 
-<use ./artwork/Fig:fabric_.pdf>
-Package pdftex.def Info: ./artwork/Fig:fabric_.pdf used on input line 295.
+<use ./artwork/Fig5.pdf>
+Package pdftex.def Info: ./artwork/Fig5.pdf used on input line 293.
 (pdftex.def)             Requested size: 345.0pt x 181.96297pt.
- [20 <./artwork/Fig:fabric_.pdf>]
-<./artwork/Fig:gstat_.pdf, id=647, 812.64566pt x 609.27295pt>
-File: ./artwork/Fig:gstat_.pdf Graphic file (type pdf)
-
-<use ./artwork/Fig:gstat_.pdf>
-Package pdftex.def Info: ./artwork/Fig:gstat_.pdf used on input line 308.
+ [20] [21 <./artwork/Fig5.pdf>]
+<artwork/Fig6.pdf, id=659, 812.64566pt x 609.27295pt>
+File: artwork/Fig6.pdf Graphic file (type pdf)
+ <use artwork/Fig6.pdf>
+Package pdftex.def Info: artwork/Fig6.pdf used on input line 305.
 (pdftex.def)             Requested size: 345.0pt x 258.66333pt.
 
-<./artwork/Fig:wave_.pdf, id=649, 1428.33624pt x 534.40633pt>
-File: ./artwork/Fig:wave_.pdf Graphic file (type pdf)
-
-<use ./artwork/Fig:wave_.pdf>
-Package pdftex.def Info: ./artwork/Fig:wave_.pdf used on input line 320.
+<artwork/Fig7.pdf, id=661, 1428.33624pt x 534.40633pt>
+File: artwork/Fig7.pdf Graphic file (type pdf)
+ <use artwork/Fig7.pdf>
+Package pdftex.def Info: artwork/Fig7.pdf used on input line 315.
 (pdftex.def)             Requested size: 345.0pt x 129.07556pt.
- [21] [22 <./artwork/Fig:gstat_.pdf> <./artwork/Fig:wave_.pdf
 
-pdfTeX warning: pdflatex (file ./artwork/Fig:wave_.pdf): PDF inclusion: multipl
-e pdfs with page group included in a single page
->] <./artwork/Fig:ppp_.pdf, id=738, 1445.4pt x 1445.4pt>
-File: ./artwork/Fig:ppp_.pdf Graphic file (type pdf)
+[22 <./artwork/Fig6.pdf>] <artwork/Fig8.pdf, id=738, 1445.4pt x 1445.4pt>
+File: artwork/Fig8.pdf Graphic file (type pdf)
 
-<use ./artwork/Fig:ppp_.pdf>
-Package pdftex.def Info: ./artwork/Fig:ppp_.pdf used on input line 330.
+<use artwork/Fig8.pdf>
+Package pdftex.def Info: artwork/Fig8.pdf used on input line 325.
 (pdftex.def)             Requested size: 345.0pt x 344.9843pt.
- [23 <./artwork/Fig:ppp_.pdf>]
-<./artwork/Fig:ams.png, id=764, 548.16795pt x 619.3539pt>
-File: ./artwork/Fig:ams.png Graphic file (type png)
-
-<use ./artwork/Fig:ams.png>
-Package pdftex.def Info: ./artwork/Fig:ams.png used on input line 341.
+ [23 <./artwork/Fig7.pdf>] [24 <./artwork/Fig8.pdf>]
+<artwork/Fig9.png, id=777, 548.16795pt x 619.3539pt>
+File: artwork/Fig9.png Graphic file (type png)
+ <use artwork/Fig9.png>
+Package pdftex.def Info: artwork/Fig9.png used on input line 336.
 (pdftex.def)             Requested size: 345.0pt x 389.80754pt.
- [24] [25 <./artwork/Fig:ams.png>]
-<./artwork/Fig:fauna_.pdf, id=782, 574.7229pt x 574.7229pt>
-File: ./artwork/Fig:fauna_.pdf Graphic file (type pdf)
 
-<use ./artwork/Fig:fauna_.pdf>
-Package pdftex.def Info: ./artwork/Fig:fauna_.pdf used on input line 362.
-(pdftex.def)             Requested size: 345.0pt x 344.99425pt.
- [26] [27 <./artwork/Fig:fauna_.pdf>]
-<./artwork/Fig:micro.png, id=862, 518.8986pt x 391.4625pt>
-File: ./artwork/Fig:micro.png Graphic file (type png)
+[25] [26 <./artwork/Fig9.png>]
+<artwork/Fig10.pdf, id=795, 540.5796pt x 555.63585pt>
+File: artwork/Fig10.pdf Graphic file (type pdf)
+ <use artwork/Fig10.pdf>
+Package pdftex.def Info: artwork/Fig10.pdf used on input line 357.
+(pdftex.def)             Requested size: 345.0pt x 354.61377pt.
 
-<use ./artwork/Fig:micro.png>
-Package pdftex.def Info: ./artwork/Fig:micro.png used on input line 377.
+<artwork/Fig11.png, id=809, 518.8986pt x 391.4625pt>
+File: artwork/Fig11.png Graphic file (type png)
+ <use artwork/Fig11.png>
+Package pdftex.def Info: artwork/Fig11.png used on input line 370.
 (pdftex.def)             Requested size: 345.0pt x 260.27747pt.
- [28] [29 <./artwork/Fig:micro.png>] [30] [31]
-[32] [33] [34] [35] (./tsr_rr.bbl
-LaTeX Font Info:    Try loading font information for T1+cmtt on input line 16.
 
-(/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
-File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
+[27] [28 <./artwork/Fig10.pdf>] [29 <./artwork/Fig11.png>] [30] [31] [32]
+[33] [34] [35] [36] (./tsr_rr.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 10--17
 \T1/txr/m/n/10 URL [][]$\T1/cmtt/m/n/10 http : / / www . sciencedirect . com / 
 science / article / pii /
  []
 
-[36]
+[37]
 Underfull \hbox (badness 10000) in paragraph at lines 42--45
 \T1/txr/m/n/10 URL [][]$\T1/cmtt/m/n/10 http : / / www . sciencedirect . com / 
 science / article / pii /
@@ -1202,7 +1182,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 54--59
 science / article / pii /
  []
 
-[37]
+
 Underfull \hbox (badness 10000) in paragraph at lines 61--64
 \T1/txr/m/n/10 URL [][]$\T1/cmtt/m/n/10 http : / / www . sciencedirect . com / 
 science / article / pii /
@@ -1214,7 +1194,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 66--70
 science / article / pii /
  []
 
-
+[38]
 Underfull \hbox (badness 10000) in paragraph at lines 83--87
 \T1/txr/m/n/10 URL [][]$\T1/cmtt/m/n/10 http : / / www . sciencedirect . com / 
 science / article / pii /
@@ -1232,7 +1212,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 96--103
 science / article / pii /
  []
 
-[38]
+[39]
 Underfull \hbox (badness 10000) in paragraph at lines 116--121
 \T1/txr/m/n/10 URL [][]$\T1/cmtt/m/n/10 http : / / www . sciencedirect . com / 
 science / article / pii /
@@ -1256,25 +1236,25 @@ Underfull \hbox (badness 10000) in paragraph at lines 139--147
 science / article / pii /
  []
 
-[39]
+
 Underfull \hbox (badness 10000) in paragraph at lines 150--158
 \T1/txr/m/n/10 URL [][]$\T1/cmtt/m/n/10 http : / / www . sciencedirect . com / 
 science / article / pii /
  []
 
-
+[40]
 Underfull \hbox (badness 10000) in paragraph at lines 171--177
 \T1/txr/m/n/10 URL [][]$\T1/cmtt/m/n/10 http : / / www . sciencedirect . com / 
 science / article / pii /
  []
 
-[40]
+
 Underfull \hbox (badness 10000) in paragraph at lines 193--201
 \T1/txr/m/n/10 URL [][]$\T1/cmtt/m/n/10 http : / / www . sciencedirect . com / 
 science / article / pii /
  []
 
-
+[41]
 Underfull \hbox (badness 10000) in paragraph at lines 209--212
 \T1/txr/m/n/10 URL [][]$\T1/cmtt/m/n/10 http : / / www . academia . dk / Biolog
 iskAntropologi / Tafonomi /
@@ -1286,13 +1266,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 222--226
 science / article / pii /
  []
 
-[41]
+
 Underfull \hbox (badness 10000) in paragraph at lines 244--248
 \T1/txr/m/n/10 URL [][]$\T1/cmtt/m/n/10 http : / / www . sciencedirect . com / 
 science / article / pii /
  []
 
-
+[42]
 Underfull \hbox (badness 10000) in paragraph at lines 255--260
 \T1/txr/m/n/10 URL [][]$\T1/cmtt/m/n/10 / / www . sciencedirect . com / science
  / article / pii /
@@ -1304,7 +1284,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 263--268
  science / article / pii /
  []
 
-[42]
+[43]
 Underfull \hbox (badness 10000) in paragraph at lines 299--304
 \T1/txr/m/n/10 URL [][]$\T1/cmtt/m/n/10 http : / / www . sciencedirect . com / 
 science / article / pii /
@@ -1316,7 +1296,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 315--320
 science / article / pii /
  []
 
-[43]
+
 Underfull \hbox (badness 10000) in paragraph at lines 322--326
 \T1/txr/m/n/10 URL [][]$\T1/cmtt/m/n/10 http : / / www . sciencedirect . com / 
 science / article / pii /
@@ -1328,7 +1308,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 329--334
 science / article / pii /
  []
 
-
+[44]
 Underfull \hbox (badness 10000) in paragraph at lines 350--354
 \T1/txr/m/n/10 URL [][]$\T1/cmtt/m/n/10 http : / / www . sciencedirect . com / 
 science / article / pii /
@@ -1340,25 +1320,25 @@ Underfull \hbox (badness 10000) in paragraph at lines 356--361
 science / article / pii /
  []
 
-[44]
+
 Underfull \hbox (badness 10000) in paragraph at lines 376--379
 \T1/txr/m/n/10 URL [][]$\T1/cmtt/m/n/10 http : / / www . sciencedirect . com / 
 science / article / pii /
  []
 
-
+[45]
 Underfull \hbox (badness 10000) in paragraph at lines 394--398
 \T1/txr/m/n/10 URL [][]$\T1/cmtt/m/n/10 http : / / www . sciencedirect . com / 
 science / article / pii /
  []
 
-[45]
+
 Underfull \hbox (badness 10000) in paragraph at lines 426--432
 \T1/txr/m/n/10 URL [][]$\T1/cmtt/m/n/10 http : / / www . sciencedirect . com / 
 science / article / pii /
  []
 
-
+[46]
 Underfull \hbox (badness 1527) in paragraph at lines 434--438
 \T1/txr/m/n/10 ranean through-out the Early to Mid-dle Pleis-tocene. Qua-ter-na
 ry In-ter-na-tional
@@ -1376,59 +1356,60 @@ Underfull \hbox (badness 10000) in paragraph at lines 440--444
 science / article / pii /
  []
 
-[46]
+
 Underfull \hbox (badness 10000) in paragraph at lines 446--450
 \T1/txr/m/n/10 URL [][]$\T1/cmtt/m/n/10 http : / / www . sciencedirect . com / 
 science / article / pii /
  []
 
-
+[47]
 Underfull \hbox (badness 10000) in paragraph at lines 465--469
 \T1/txr/m/n/10 URL [][]$\T1/cmtt/m/n/10 http : / / www . sciencedirect . com / 
 science / article / pii /
  []
 
-[47]
+[48]
 Underfull \hbox (badness 10000) in paragraph at lines 514--517
 \T1/txr/m/n/10 URL [][]$\T1/cmtt/m/n/10 http : / / www . sciencedirect . com / 
 science / article / pii /
  []
 
 )
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 454.
- [48]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 454.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 443.
+ [49]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 443.
  (./tsr_rr.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 454.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 454.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 443.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 443.
 Package rerunfilecheck Info: File `tsr_rr.out' has not changed.
-(rerunfilecheck)             Checksum: 4329C3F4FFA030D39DF35FEA15846547;1563.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 454.
+(rerunfilecheck)             Checksum: CF0C83438E801353A376C0955772098F;1564.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 443.
  ) 
 Here is how much of TeX's memory you used:
- 9330 strings out of 494749
- 129455 string characters out of 6174696
- 222340 words of memory out of 5000000
- 12293 multiletter control sequences out of 15000+600000
- 53810 words of font info for 105 fonts, out of 8000000 for 9000
+ 9350 strings out of 494749
+ 129303 string characters out of 6174696
+ 222417 words of memory out of 5000000
+ 12304 multiletter control sequences out of 15000+600000
+ 60522 words of font info for 111 fonts, out of 8000000 for 9000
  81 hyphenation exceptions out of 8191
- 34i,12n,34p,2514b,593s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 34i,12n,34p,2526b,603s stack positions out of 5000i,500n,10000p,200000b,80000s
  </home/dncgst/.texlive2016/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1000.60
-0pk>{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texm
-f/fonts/type1/public/tex-gyre/qhvb.pfb></usr/share/texmf/fonts/type1/public/tex
--gyre/qhvr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/rtxi.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/share/texlive/
-texmf-dist/fonts/type1/public/txfonts/txex.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/txfonts/txsy.pfb></usr/share/texlive/texmf-dist/fonts/type1/u
-rw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utm
-b8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
-Output written on tsr_rr.pdf (48 pages, 35621361 bytes).
+0pk>{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc} </home/dncgst/.
+texlive2016/texmf-var/fonts/pk/ljfour/jknappen/ec/ectt0800.600pk></usr/share/te
+xmf/fonts/type1/public/tex-gyre/qhvb.pfb></usr/share/texmf/fonts/type1/public/t
+ex-gyre/qhvr.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/rtxi
+.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb></usr/
+share/texlive/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/txfonts/txex.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/txfonts/txsy.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/urw/helvetic/uhvr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/u
+tmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/urw/zapfding/uzdr.pfb>
+Output written on tsr_rr.pdf (49 pages, 30358002 bytes).
 PDF statistics:
- 1350 PDF objects out of 1440 (max. 8388607)
- 1138 compressed objects within 12 object streams
- 168 named destinations out of 1000 (max. 500000)
+ 1472 PDF objects out of 1728 (max. 8388607)
+ 1213 compressed objects within 13 object streams
+ 173 named destinations out of 1000 (max. 500000)
  232 words of extra memory for PDF output out of 10000 (max. 10000000)
 

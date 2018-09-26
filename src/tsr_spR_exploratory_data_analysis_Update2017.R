@@ -3,9 +3,9 @@
 ## Total Station database
 
 ### read data
-totalstation2015 <- read.csv("~/Dropbox/TSR/tsr_totalstation_2015.csv", header=TRUE, sep=",", skip=0)
-totalstation2016 <- read.csv("~/Dropbox/TSR/tsr_totalstation_2016.csv", header=TRUE, sep=",", skip=0)
-totalstation2017 <- read.csv("~/Dropbox/TSR/tsr_totalstation_2017.csv", header=TRUE, sep=",", skip=0)
+totalstation2015 <- read.csv("~/Dropbox/TSR_database/tsr_totalstation_2015.csv", header=TRUE, sep=",", skip=0)
+totalstation2016 <- read.csv("~/Dropbox/TSR_database/tsr_totalstation_2016.csv", header=TRUE, sep=",", skip=0)
+totalstation2017 <- read.csv("~/Dropbox/TSR_database/tsr_totalstation_2017.csv", header=TRUE, sep=",", skip=0)
 
 totalstation_all <- rbind(totalstation2015, totalstation2016)
 totalstation2017$spit <- as.integer(totalstation2017$spit)

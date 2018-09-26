@@ -56,32 +56,6 @@ plot(spatstat::envelope(X.ppp, Kinhom, nsim=19))
 plot(spatstat::envelope(X.ppp, pcfinhom, nsim=19))
 ```
 
-### Fig
-
-```{r}
-
-```
-
-```{r}
-# scatterplot3d
-library(scatterplot3d)
-
-X.ppp$marks$pcolr[X.ppp$marks$type.x == "Bone"] <- "red" 
-X.ppp$marks$pcolr[X.ppp$marks$type.x == "Tooth"] <- "blue" 
-X.ppp$marks$pcolr[X.ppp$marks$type.x == "Bone/Tooth"] <- "green" 
-
-scatterplot3d(X.ppp$x, X.ppp$y, X.ppp$marks$z.x, pch=19, color=X.ppp$marks$pcolr, xlab="x", ylab="y", zlab="z", grid=TRUE, box=FALSE, angle=75)
-
-# rgl
-library(rgl)
-
-plot3d(X.ppp$x, X.ppp$y, X.ppp$marks$z.x, type="p", xlab="x", ylab="y", zlab="z", box=FALSE, aspect=1)
-
-rgl.open()
-rgl.bg(color="white")
-rgl.points(X.ppp$x, X.ppp$y, X.ppp$marks$z.x, type="p")
-```
-
 ## Detecting anisotropy
 
 ### Fry plot
