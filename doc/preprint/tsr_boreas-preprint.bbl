@@ -1,0 +1,477 @@
+\begin{thebibliography}{83}
+\expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
+\expandafter\ifx\csname url\endcsname\relax
+  \def\url#1{\texttt{#1}}\fi
+\expandafter\ifx\csname urlprefix\endcsname\relax\def\urlprefix{URL }\fi
+
+\bibitem[{Aramendi et~al.(2017)Aramendi, Uribelarrea, Arriaza, Arráiz,
+  Barboni, Yravedra, Ortega, Gidna, Mabulla, Baquedano, and
+  Domínguez-Rodrigo}]{Aramendi2017}
+Aramendi, J., Uribelarrea, D., Arriaza, M.~C., Arráiz, H., Barboni, D.,
+  Yravedra, J., Ortega, M.~C., Gidna, A., Mabulla, A., Baquedano, E.,
+  Domínguez-Rodrigo, M., 2017. {The paleoecology and taphonomy of AMK (Bed I,
+  Olduvai Gorge) and its contributions to the understanding of the “Zinj”
+  paleolandscape}. Palaeogeography, Palaeoclimatology, Palaeoecology 488,
+  35--49.
+
+\bibitem[{Baddeley et~al.(2015)Baddeley, Rubak, and Turner}]{spatstatBook}
+Baddeley, A., Rubak, E., Turner, R., 2015. Spatial Point Patterns: Methodology
+  and Applications with {R}. Chapman and Hall/CRC, London.
+
+\bibitem[{Balsey and Buddington(1960)}]{Balsey1960}
+Balsey, J.~R., Buddington, A.~F., 1960. Magnetic susceptibility anisotropy and
+  fabric of some adirondack granites and orthogneisses. American Journal of
+  Science 258, 6--20.
+
+\bibitem[{Behrensmeyer(1975{\natexlab{a}})}]{Behrensmeyer1975}
+Behrensmeyer, A., 1975{\natexlab{a}}. Taphonomy and paleoecology in the hominid
+  fossil record. Yearbook of Physical Anthropology 19, 36--50.
+
+\bibitem[{Behrensmeyer(1975{\natexlab{b}})}]{Behrensmeyer1975a}
+Behrensmeyer, A.~K., 1975{\natexlab{b}}. {The taphonomy and paleoecology of
+  Plio-Pleistocene vertebrate assemblages East of Lake Rudolf, Kenya}. Bulletin
+  of the Museum of Comparative Zoology 146, 473--578.
+
+\bibitem[{Behrensmeyer(1982)}]{Behrensmeyer1982}
+Behrensmeyer, A.~K., 1982. Time resolution in fuvial vertebrate assemblages.
+  Paleobiology 8~(3), 211--227.
+
+\bibitem[{Behrensmeyer(1988)}]{Behrensmeyer1988}
+Behrensmeyer, A.~K., 1988. Vertebrate preservation in fluvial channels.
+  Palaeogeography, Palaeoclimatology, Palaeoecology 63~(1), 183--199.
+
+\bibitem[{Benito-Calvo and de~la Torre(2011)}]{Benito-Calvo2011}
+Benito-Calvo, A., de~la Torre, I., 2011. {A}nalysis of orientation patterns in
+  {O}lduvai {B}ed {I} assemblages using {GIS} techniques: {I}mplications for
+  site formation processes. Journal of Human Evolution 61~(1), 50--60.
+
+\bibitem[{Benito-Calvo et~al.(2011)Benito-Calvo, Martínez-Moreno, Mora, Roy,
+  and Roda}]{Benito-Calvo2011a}
+Benito-Calvo, A., Martínez-Moreno, J., Mora, R., Roy, M., Roda, X., 2011.
+  {Trampling experiments at Cova Gran de Santa Linya, Pre-Pyrenees, Spain:
+  their relevance for archaeological fabrics of the Upper–Middle Paleolithic
+  assemblages }. Journal of Archaeological Science 38~(12), 3652--3661.
+
+\bibitem[{Bertran and Texier(1995)}]{Bertran1995}
+Bertran, P., Texier, J.-P., 1995. {F}abric {A}nalysis: {A}pplication to
+  {P}aleolithic {S}ites. Journal of Archaeological Science 22~(4), 521--535.
+
+\bibitem[{Bevan and Conolly(2009)}]{Bevan2009}
+Bevan, A., Conolly, J., 2009. {M}odelling spatial heterogeneity and
+  nonstationarity in artifact-rich landscapes. Journal of Archaeological
+  Science 36~(4), 956--964.
+
+\bibitem[{Boaz(1982)}]{Boaz1982}
+Boaz, D.~D., 1982. {Modern riverine taphonomy: its relevance to the
+  interpretation of Plio-Pleistocene hominid paleoecology in the Omo basin,
+  Ethiopia}. Ph.D. thesis.
+
+\bibitem[{Boaz and Behrensmeyer(1976)}]{Boaz1976}
+Boaz, N.~T., Behrensmeyer, A.~K., 1976. Hominid taphonomy: Transport of human
+  skeletal parts in an artificial fluviatile environment. American Journal of
+  Physical Anthropology 45~(1), 53--60.
+
+\bibitem[{Coard(1999)}]{Coard1999}
+Coard, R., 1999. One bone, two bones, wet bones, dry bones: Transport
+  potentials under experimental conditions. Journal of Archaeological Science
+  26~(11), 1369--1375.
+
+\bibitem[{Coard and Dennell(1995)}]{Coard1995}
+Coard, R., Dennell, R., 1995. Taphonomy of some articulated skeletal remains:
+  Transport potential in an artificial environment. Journal of Archaeological
+  Science 22~(3), 441--448.
+
+\bibitem[{Cobo-Sánchez et~al.(2014)Cobo-Sánchez, Aramendi, and
+  Domínguez-Rodrigo}]{Cobo-Sanchez2014}
+Cobo-Sánchez, L., Aramendi, J., Domínguez-Rodrigo, M., 2014. {Orientation
+  patterns of wildebeest bones on the lake Masek floodplain (Serengeti,
+  Tanzania) and their relevance to interpret anisotropy in the Olduvai
+  lacustrine floodplain}. Quaternary International 322–323~(0), 277--284, the
+  Evolution of Hominin Behavior during the Oldowan-Acheulian Transition: Recent
+  Evidence from Olduvai Gorge and Peninj (Tanzania).
+
+\bibitem[{Cremaschi et~al.(In press)Cremaschi, Trombino, and
+  Zerboni}]{Cremaschi2018}
+Cremaschi, M., Trombino, L., Zerboni, A., In press. Palaeosoils and relict
+  soils, a systematic review. In: Stoops, G., Marcelino, V., Mees, F. (Eds.),
+  Interpretation of micromorphological features of soils and regoliths –
+  Revised Edition. Elsevier, Oxford, pp. 873--904.
+
+\bibitem[{Dale and Fortin(2014)}]{Dale2014}
+Dale, M., Fortin, M., 2014. Spatial Analysis: A Guide for Ecologists, second
+  edition Edition. Cambridge University Press.
+
+\bibitem[{de~la Torre and Benito-Calvo(2013)}]{Torre2013a}
+de~la Torre, I., Benito-Calvo, A., 2013. {A}pplication of {GIS} methods to
+  retrieve orientation patterns from imagery; a case study from {B}eds {I} and
+  {II}, {O}lduvai {G}orge ({T}anzania). Journal of Archaeological Science
+  40~(5), 2446--2457.
+
+\bibitem[{Domínguez-Rodrigo et~al.(2014{\natexlab{a}})Domínguez-Rodrigo,
+  Bunn, Mabulla, Baquedano, Uribelarrea, Pérez-González, Gidna, Yravedra,
+  Diez-Martin, Egeland, Barba, Arriaza, Organista, and
+  Ansón}]{Dominguez-Rodrigo2014c}
+Domínguez-Rodrigo, M., Bunn, H., Mabulla, A., Baquedano, E., Uribelarrea, D.,
+  Pérez-González, A., Gidna, A., Yravedra, J., Diez-Martin, F., Egeland, C.,
+  Barba, R., Arriaza, M., Organista, E., Ansón, M., 2014{\natexlab{a}}. {On
+  meat eating and human evolution: A taphonomic analysis of BK4b (Upper Bed II,
+  Olduvai Gorge, Tanzania), and its bearing on hominin megafaunal consumption
+  }. Quaternary International 322–323, 129--152, the Evolution of Hominin
+  Behavior during the Oldowan-Acheulian Transition: Recent Evidence from
+  Olduvai Gorge and Peninj (Tanzania).
+
+\bibitem[{Domínguez-Rodrigo et~al.(2012)Domínguez-Rodrigo, Bunn, Pickering,
+  Mabulla, Musiba, Baquedano, Ashley, Diez-Martin, Santonja, Uribelarrea,
+  Barba, Yravedra, Barboni, Arriaza, and Gidna}]{Dominguez-Rodrigo2012}
+Domínguez-Rodrigo, M., Bunn, H., Pickering, T., Mabulla, A., Musiba, C.,
+  Baquedano, E., Ashley, G., Diez-Martin, F., Santonja, M., Uribelarrea, D.,
+  Barba, R., Yravedra, J., Barboni, D., Arriaza, C., Gidna, A., 2012.
+  {A}utochthony and orientation patterns in {O}lduvai {B}ed {I}: a
+  re-examination of the status of post-depositional biasing of archaeological
+  assemblages from {FLK} {N}orth ({FLKN}). Journal of Archaeological Science
+  39~(7), 2116--2127.
+
+\bibitem[{Domínguez-Rodrigo et~al.(2014{\natexlab{b}})Domínguez-Rodrigo,
+  Bunn, and Yravedra}]{Dominguez-Rodrigo2014a}
+Domínguez-Rodrigo, M., Bunn, H.~T., Yravedra, J., 2014{\natexlab{b}}. {A
+  critical re-evaluation of bone surface modification models for inferring
+  fossil hominin and carnivore interactions through a multivariate approach:
+  Application to the FLK Zinj archaeofaunal assemblage (Olduvai Gorge,
+  Tanzania)}. Quaternary International 322–323~(0), 32--43, the Evolution of
+  Hominin Behavior during the Oldowan-Acheulian Transition: Recent Evidence
+  from Olduvai Gorge and Peninj (Tanzania).
+
+\bibitem[{Domínguez-Rodrigo et~al.(2017)Domínguez-Rodrigo, Cobo-Sánchez,
+  Yravedra, Uribelarrea, Arriaza, Organista, and
+  Baquedano}]{Dominguez-Rodrigo2017}
+Domínguez-Rodrigo, M., Cobo-Sánchez, L., Yravedra, J., Uribelarrea, D.,
+  Arriaza, C., Organista, E., Baquedano, E., 2017. Fluvial spatial taphonomy: a
+  new method for the study of post-depositional processes. Archaeological and
+  Anthropological Sciences, 1--21.
+
+\bibitem[{Domínguez-Rodrigo et~al.(2014{\natexlab{c}})Domínguez-Rodrigo,
+  Diez-Martín, Yravedra, Barba, Mabulla, Baquedano, Uribelarrea, Sánchez, and
+  Eren}]{Dominguez-Rodrigo2014b}
+Domínguez-Rodrigo, M., Diez-Martín, F., Yravedra, J., Barba, R., Mabulla, A.,
+  Baquedano, E., Uribelarrea, D., Sánchez, P., Eren, M.~I.,
+  2014{\natexlab{c}}. {Study of the SHK Main Site faunal assemblage, Olduvai
+  Gorge, Tanzania: Implications for Bed II taphonomy, paleoecology, and hominin
+  utilization of megafauna}. Quaternary International 322–323, 153--166.
+
+\bibitem[{Domínguez-Rodrigo et~al.(2011)Domínguez-Rodrigo, Fernández-López,
+  and Alcalá}]{Dominguez-Rodrigo2011}
+Domínguez-Rodrigo, M., Fernández-López, S., Alcalá, L., 2011. {How Can
+  Taphonomy Be Defined in the XXI Century?} Journal of Taphonomy 9~(1), 1--13.
+
+\bibitem[{Domínguez-Rodrigo and García-Pérez(2013)}]{Dominguez-Rodrigo2013}
+Domínguez-Rodrigo, M., García-Pérez, A., 07 2013. {Testing the Accuracy of
+  Different A-Axis Types for Measuring the Orientation of Bones in the
+  Archaeological and Paleontological Record}. PLoS ONE 8~(7), e68955.
+
+\bibitem[{Domínguez-Rodrigo et~al.(2014{\natexlab{d}})Domínguez-Rodrigo,
+  Uribelarrea, Santonja, Bunn, García-Pérez, Pérez-González, Panera,
+  Rubio-Jara, Mabulla, Baquedano, Yravedra, and
+  Diez-Martín}]{Dominguez-Rodrigo2014}
+Domínguez-Rodrigo, M., Uribelarrea, D., Santonja, M., Bunn, H.,
+  García-Pérez, A., Pérez-González, A., Panera, J., Rubio-Jara, S.,
+  Mabulla, A., Baquedano, E., Yravedra, J., Diez-Martín, F.,
+  2014{\natexlab{d}}. {Autochthonous anisotropy of archaeological materials by
+  the action of water: experimental and archaeological reassessment of the
+  orientation patterns at the Olduvai sites}. Journal of Archaeological Science
+  41~(0), 44--68.
+
+\bibitem[{Eberth et~al.(2007)Eberth, Rogers, and Fiorillo}]{Eberth2007}
+Eberth, D.~A., Rogers, R.~R., Fiorillo, A.~R., 2007. A practical approach to
+  the study of bonebeds. In: Rogers, R.~R., Eberth, D.~A., Fiorillo, A.~R.
+  (Eds.), Bonebeds. Genesis, Analysis, and Paleobiological Significance. The
+  University of Chicago Press, pp. 265--332.
+
+\bibitem[{Efremov(1940)}]{Efremov1940}
+Efremov, I.~A., 1940. Taphonomy: a new branch of paleontology. Pan American
+  Geologist 74, 81--93.
+
+\bibitem[{Felletti et~al.(2016)Felletti, Dall’Olio, and
+  Muttoni}]{Felletti2016}
+Felletti, F., Dall’Olio, E., Muttoni, G., 2016. {Determining flow directions
+  in turbidites: An integrates sedimentological and magnetic fabric study of
+  the Miocene Marnoso Arenacea Formation (northern Apennines, Italy)}.
+  Sedimentary Geology 335, 197--215.
+
+\bibitem[{Fernández-Jalvo et~al.(2011)Fernández-Jalvo, Scott, and
+  Andrews}]{Fernandez-Jalvo2011}
+Fernández-Jalvo, Y., Scott, L., Andrews, P., 2011. Taphonomy in
+  palaeoecological interpretations. Quaternary Science Reviews 30~(11),
+  1296--1302.
+
+\bibitem[{Fernández-López et~al.(2002)Fernández-López, Fernández-Jalvo,
+  and Alcalá}]{Fernandez-Lopez2002}
+Fernández-López, R.~S., Fernández-Jalvo, Y., Alcalá, L., 2002.
+  Accumulation: taphonomic concept and other palaeontological uses. In: Renzi,
+  M.~D., Alonso, M.~P., Belinchón, M., Peñalver, E., Montoya, P.,
+  Márquez-Aliaga, A. (Eds.), Current Topics on Taphonomy and Fossilization.
+  pp. 37--47.
+
+\bibitem[{Fernández-López(2006)}]{Fernandez-Lopez2006}
+Fernández-López, S., 2006. Taphonomic alteration and evolutionary taphonomy.
+  Journal of Taphonomy 4~(3), 111--142.
+
+\bibitem[{Fiorillo(1988)}]{Fiorillo1988}
+Fiorillo, A.~R., 1988. A proposal for graphic presentation of orientation data
+  from fossils. Contributions to Geology 26~(1), 1--4.
+
+\bibitem[{Fiorillo(1991)}]{Fiorillo1991}
+Fiorillo, A.~R., 1991. {Taphonomy and depositional setting of Careless Creek
+  Quarry (Judith River Formation), Wheatland County, Montana, U.S.A.}
+  Palaeogeography, Palaeoclimatology, Palaeoecology 81~(3), 281--311.
+
+\bibitem[{Frison and Todd(1986)}]{Frison1986}
+Frison, G.~C., Todd, L.~C., 1986. The Colby Mammoth Site: Taphonomy and
+  Archaeology of a Clovis Kill in Northern Wyoming. University of New Mexico
+  Press.
+
+\bibitem[{Giusti and Arzarello(2016)}]{Giusti2016}
+Giusti, D., Arzarello, M., 2016. {The need for a taphonomic perspective in
+  spatial analysis: Formation processes at the Early Pleistocene site of Pirro
+  Nord (P13), Apricena, Italy}. Journal of Archaeological Science: Reports 8,
+  235--249.
+
+\bibitem[{Giusti et~al.(in press)Giusti, Tourloukis, Konidaris, Thompson,
+  Karkanas, Panagopoulou, and Harvati}]{Giusti}
+Giusti, D., Tourloukis, V., Konidaris, G., Thompson, N., Karkanas, P.,
+  Panagopoulou, E., Harvati, K., in press. {Beyond maps: Patterns of formation
+  processes at the Middle Pleistocene open-air site of Marathousa 1,
+  Megalopolis basin, Greece}. Quaternary International.
+
+\bibitem[{Hamilton and Rees(1970)}]{Hamilton1970}
+Hamilton, N., Rees, A.~J., 1970. The use of magnetic fabric in palaeocurrent
+  estimation. In: Runcorn, S.~K. (Ed.), Palaeogeophysics. Academic, London, pp.
+  445--464.
+
+\bibitem[{Hill(1976)}]{Hill1976}
+Hill, A., 1976. On carnivore and weathering damage to bone. Current
+  Anthropology 17, 335--336.
+
+\bibitem[{Hrouda(1982)}]{Hrouda1982}
+Hrouda, F., 1982. Magnetic anisotropy of rocks and its application in geology
+  and geophysics. Geophysical Surveys 5~(1), 37--82.
+
+\bibitem[{Hrouda and Janák(1976)}]{Hrouda1976}
+Hrouda, F., Janák, F., 1976. The changes in shape of the magnetic
+  susceptibility ellipsoid during progressive metamorphism and deformation.
+  Tectonophysics 34, 135--148.
+
+\bibitem[{Jammalamadaka et~al.(2001)Jammalamadaka, Sengupta, and
+  Sengupta}]{Jammalamadaka2001}
+Jammalamadaka, S., Sengupta, A., Sengupta, A., 2001. Topics in Circular
+  Statistics. Series on multivariate analysis. World Scientific.
+
+\bibitem[{Jelinek(1981)}]{Jelinek1981}
+Jelinek, V., 1981. Characterization of the magnetic fabrics of rocks.
+  Tectonophysics 79, 63--67.
+
+\bibitem[{Kaufmann et~al.(2011)Kaufmann, Gutiérrez, Álvarez, González, and
+  Massigoge}]{Kaufmann2011}
+Kaufmann, C., Gutiérrez, M.~A., Álvarez, M.~C., González, M.~E., Massigoge,
+  A., 2011. {Fluvial dispersal potential of guanaco bones (Lama guanicoe) under
+  controlled experimental conditions: the influence of age classes to the
+  hydrodynamic behavior}. Journal of Archaeological Science 38~(2), 334--344.
+
+\bibitem[{Konidaris et~al.(2016)Konidaris, Kostopoulos, Koufos, V., and
+  Harvati}]{Konidaris2016}
+Konidaris, G.~E., Kostopoulos, D.~S., Koufos, G.~D., V., T., Harvati, K., 2016.
+  {Tsiotra Vryssi: a new vertebrate locality from the Early Pleistocene of
+  Mygdonia Basin (Macedonia, Greece)}. In: XIV Annual Meeting of the European
+  Association of Vertebrate Palaeontologists. Koninklijke Nederlandse Akademie
+  Van Wetenschappen, p.~37.
+
+\bibitem[{Konidaris et~al.(2015)Konidaris, Tourloukis, Kostopoulos, Thompson,
+  Giusti, Michailidis, Koufos, and Harvati}]{Konidaris2015}
+Konidaris, G.~E., Tourloukis, V., Kostopoulos, D.~S., Thompson, N., Giusti, D.,
+  Michailidis, D., Koufos, G.~D., Harvati, K., 2015. {Two new vertebrate
+  localities from the Early Pleistocene of Mygdonia Basin (Macedonia, Greece):
+  Preliminary results}. Comptes Rendus Palevol 14~(5), 353--362.
+
+\bibitem[{Koufos et~al.(in press)Koufos, Konidaris, and Harvati}]{Koufos}
+Koufos, G.~D., Konidaris, G.~E., Harvati, K., in press. {Revisiting \emph{Ursus
+  etruscus} (Carnivora, Mammalia) from the Early Pleistocene of Greece with
+  description of new material}. Quaternary International.
+
+\bibitem[{Koufos et~al.(1995)Koufos, Syrides, Kostopoulos, and
+  Koliadimou}]{Koufos1995}
+Koufos, G.~D., Syrides, G.~E., Kostopoulos, D.~S., Koliadimou, K.~K., 1995.
+  {Preliminary results about the stratigraphy and the palaeoenvironment of
+  Mygdonia Basin, Macedonia, Greece}. Geobios 28~(Supplement 1), 243--249,
+  first European Palaeontological Congress.
+
+\bibitem[{Kühn et~al.(2010)Kühn, Aguilar, and Miedema}]{Kuehn2010}
+Kühn, P., Aguilar, J., Miedema, R., 2010. Textural pedofeatures and related
+  horizons. In: Stoops, G., Marcelino, V., Mees, F. (Eds.), Interpretation of
+  micromorphological features of soils and regoliths. Elsevier, Oxford, pp.
+  217--250.
+
+\bibitem[{Lanza and Meloni(2006)}]{Lanza2006}
+Lanza, R., Meloni, A., 2006. The Earth’s Magnetism: An Introduction to
+  Geologists. Springer, Berlin.
+
+\bibitem[{Legendre and Legendre(2012)}]{Legendre2012}
+Legendre, P., Legendre, L., 2012. Numerical Ecology. Developments in
+  Environmental Modelling. Elsevier Science.
+
+\bibitem[{Lenoble and Bertran(2004)}]{Lenoble2004}
+Lenoble, A., Bertran, P., 2004. {F}abric of {P}alaeolithic levels: methods and
+  implications for site formation processes. Journal of Archaeological Science
+  31~(4), 457 -- 469.
+
+\bibitem[{Lenoble et~al.(2008)Lenoble, Bertran, and Lacrampe}]{Lenoble2008}
+Lenoble, A., Bertran, P., Lacrampe, F., 2008. {S}olifluction-induced
+  modifications of archaeological levels: simulation based on experimental data
+  from a modern periglacial slope and application to {F}rench {P}alaeolithic
+  sites. Journal of Archaeological Science 35~(1), 99 -- 110.
+
+\bibitem[{Lindbo et~al.(2010)Lindbo, Stolt, and Vepraskas}]{Lindbo2010}
+Lindbo, D.~L., Stolt, M.~H., Vepraskas, M.~J., 2010. Redoximorphic features.
+  In: Stoops, G., Marcelino, V., Mees, F. (Eds.), Interpretation of
+  micromorphological features of soils and regoliths. Elsevier, Oxford, pp.
+  129--147.
+
+\bibitem[{Liu et~al.(2001)Liu, Saito, Yamazaki, Abdelayem, Oda, Hori, and
+  Zhao}]{Liu2001}
+Liu, B., Saito, Y., Yamazaki, T., Abdelayem, A., Oda, H., Hori, K., Zhao, Q.,
+  2001. {Paleocurrent analysis for the Late Pleistocene-Holocene incised-valley
+  fill of the Yangtze delta, China by using anisotropy of magnetic
+  susceptibility data}. Marine Geology 176, 175--189.
+
+\bibitem[{Lloyd and Atkinson(2004)}]{Lloyd2004}
+Lloyd, C., Atkinson, P., 2004. {A}rchaeology and geostatistics. Journal of
+  Archaeological Science 31~(2), 151 -- 165.
+
+\bibitem[{Lowrie and Hirt(1987)}]{Lowrie1987}
+Lowrie, W., Hirt, A.~M., 1987. Anisotropy of magnetic susceptibility in the
+  scaglia rossa pelagic limestone. arth and Planetary Science Letters 82,
+  349--356.
+
+\bibitem[{Lyman(1994)}]{Lyman1994}
+Lyman, R., 1994. Vertebrate Taphonomy. Cambridge Manuals in Archaeology.
+  Cambridge University Press.
+
+\bibitem[{Lyman(2010)}]{Lyman2010}
+Lyman, R.~L., 2010. What taphonomy is, what it isn’t, and why taphonomists
+  should care about the difference. Journal of Taphonomy 8~(1), 1--16.
+
+\bibitem[{Markofsky and Bevan(2012)}]{Markofsky2012}
+Markofsky, S., Bevan, A., 2012. {D}irectional analysis of surface artefact
+  distributions: a case study from the {M}urghab {D}elta, {T}urkmenistan.
+  Journal of Archaeological Science 39~(2), 428 -- 439.
+
+\bibitem[{Miall(1977)}]{Miall1977}
+Miall, A.~D., 1977. {Lithofacies Types and Vertical Profile Models in Braided
+  River Deposits: A Summary}. In: Miall, A.~D. (Ed.), Fluvial Sedimentology.
+  Vol. Memoir 5. Canadian Society of Petroleum Geologists, Calgary, pp.
+  597--604.
+
+\bibitem[{Miall(1982)}]{Miall1982}
+Miall, A.~D., 1982. {Analysis of fluvial depositional systems}. AAPG, Tulsa,
+  Okla.
+
+\bibitem[{Murphy(1986)}]{Murphy1986}
+Murphy, C.~P., 1986. Thin section preparation of soils and sediments. AB
+  Academic Publishers, Berkhamsted.
+
+\bibitem[{Nash and Petraglia(1987)}]{Nash1987}
+Nash, D.~T., Petraglia, M.~D. (Eds.), 1987. Natural formation processes and the
+  archaeological record. Vol. 352 of International Series. British
+  Archaeological Reports, Oxford.
+
+\bibitem[{Novak et~al.(2014)Novak, Housen, Kitamura, Kanamatsuc, and
+  Kawamura}]{Novak2014}
+Novak, B., Housen, B., Kitamura, Y., Kanamatsuc, T., Kawamura, K., 2014.
+  Magnetic fabric analyses as a method for determining sediment transport and
+  deposition in deep sea sediments. Marine Geology 356, 19--30.
+
+\bibitem[{Organista et~al.(2017)Organista, Domínguez-Rodrigo, Yravedra,
+  Uribelarrea, Arriaza, Ortega, Mabulla, Gidna, and Baquedano}]{Organista2017}
+Organista, E., Domínguez-Rodrigo, M., Yravedra, J., Uribelarrea, D., Arriaza,
+  M.~C., Ortega, M.~C., Mabulla, A., Gidna, A., Baquedano, E., 2017. {Biotic
+  and abiotic processes affecting the formation of \{BK\} Level 4c (Bed II,
+  Olduvai Gorge) and their bearing on hominin behavior at the site}.
+  Palaeogeography, Palaeoclimatology, Palaeoecology 488, 59--75.
+
+\bibitem[{Palombo(2010)}]{Palombo2010}
+Palombo, M.~R., 2010. {A} scenario of human dispersal in the northwestern
+  {M}editerranean throughout the {E}arly to {M}iddle {P}leistocene. Quaternary
+  International 223–224~(0), 179--194.
+
+\bibitem[{Palombo(2016)}]{Palombo2016}
+Palombo, M.~R., 2016. To what extent could functional diversity be a useful
+  tool in inferring ecosystem responses to past climate changes? Quaternary
+  International 413~(Part B), 15--31.
+
+\bibitem[{Pante and Blumenschine(2010)}]{Pante2010}
+Pante, M.~C., Blumenschine, R.~J., 2010. Fluvial transport of bovid long bones
+  fragmented by the feeding activities of hominins and carnivores. Journal of
+  Archaeological Science 37~(4), 846 -- 854.
+
+\bibitem[{Parés et~al.(2007)Parés, Hassold, Rea, and van~der
+  Pluijm}]{Pares2007}
+Parés, J.~M., Hassold, N. J.~C., Rea, D.~K., van~der Pluijm, B.~A., 2007.
+  {Paleocurrent directions from paleomagnetic reorentiation of magnetic fabrics
+  in deep-sea sediments at the Antarctic Peninsula Pacific margin (ODP sites
+  1095, 1101)}. Marine Geology 242, 261--269.
+
+\bibitem[{Petraglia and Nash(1987)}]{Petraglia1987}
+Petraglia, M.~D., Nash, D.~T., 1987. The impact of fluvial processes on
+  experimental sites. In: Nash, D.~T., Petraglia, M.~D. (Eds.), Natural
+  formation processes and the archaeological record. Vol. 352 of International
+  Series. British Archaeological Reports, Oxford, pp. 108--130.
+
+\bibitem[{Petraglia and Potts(1994)}]{Petraglia1994}
+Petraglia, M.~D., Potts, R., 1994. {Water Flow and the Formation of Early
+  Pleistocene Artifact Sites in Olduvai Gorge, Tanzania}. Journal of
+  Anthropological Archaeology 13~(3), 228--254.
+
+\bibitem[{{R Core Team}(2017)}]{RCoreTeam2017}
+{R Core Team}, 2017. R: A Language and Environment for Statistical Computing. R
+  Foundation for Statistical Computing, Vienna, Austria.
+
+\bibitem[{Rosenberg and Anderson(2011)}]{Rosenberg2011}
+Rosenberg, M., Anderson, C., 2011. Passage: Pattern analysis, spatial
+  statistics and geographic exegesis. version 2. Methods in Ecology and
+  Evolution 2~(3), 229--232.
+
+\bibitem[{Rosenberg(2004)}]{Rosenberg2004}
+Rosenberg, M.~S., 2004. Wavelet analysis for detecting anisotropy in point
+  patterns. Journal of Vegetation Science 15~(2), 277--284.
+
+\bibitem[{Schick(1987)}]{Schick1987a}
+Schick, K.~D., 1987. Experimentally-derived criteria for assessing hydrologic
+  disturbance of archaeological sites. In: Nash, D.~T., Petraglia, M.~D.
+  (Eds.), Natural formation processes and the archaeological record. Vol. 352
+  of International Series. British Archaeological Reports, Oxford, pp. 86--107.
+
+\bibitem[{Schiffer(1987)}]{Schiffer1987}
+Schiffer, M.~B., 1987. Formation processes of the archaeological record.
+  University of New Mexico Press, Albuquerque.
+
+\bibitem[{Stacey et~al.(1960)Stacey, Joplin, and Lindsay}]{Stacey1960}
+Stacey, F.~D., Joplin, G., Lindsay, J., 1960. Magnetic anisotropy and fabric of
+  some foliated rocks from se australia. Geofisica Pura e Applicata 47, 30--40.
+
+\bibitem[{Tarling and Hrouda(1993)}]{Tarling1993}
+Tarling, D.~H., Hrouda, F., 1993. The Magnetic Anisotropy of Rocks. Chapman and
+  Hall, London.
+
+\bibitem[{Toots(1965)}]{Toots1965}
+Toots, H., 1965. Orientation and distribution of fossils as environmental
+  indicators. In: Nineteenth Field Conference of the Wyoming Geological
+  Association. pp. 219--292.
+
+\bibitem[{Voorhies(1969)}]{Voorhies1969}
+Voorhies, M., 1969. {Taphonomy and population dynamics of an early Pliocene
+  vertebrate fauna, Knox County, Nebraska}. Contributions to Geology,
+  University of Wyoming Special Paper 1, 1--69.
+
+\bibitem[{Woodcock and Naylor(1983)}]{Woodcock1983}
+Woodcock, N., Naylor, M., 1983. Randomness testing in three-dimensional
+  orientation data. Journal of Structural Geology 5~(5), 539 -- 548.
+
+\end{thebibliography}

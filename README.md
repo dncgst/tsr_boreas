@@ -1,7 +1,7 @@
 tsr_boreas
 ==========
 
-This repository contains an open licensed compendium of data (`/data`), source code (`/src`) and text (`/doc`) associated with the publication "Recursive anisotropy: a spatial taphonomic study of the Early Pleistocene vertebrate assemblage of Tsiotra Vryssi, Mygdonia Basin, Greece", authored by D. Giusti et al. DOI: [10.1111/bor.12368](https://doi.org/10.1111/bor.12368). A preprint of the manuscript is available open access on [Open Science Framework](https://osf.io/qkznm/) (DOI: [10.17605/OSF.IO/QKZNM](https://doi.org/10.17605/OSF.IO/QKZNM)).
+This repository contains an open licensed compendium of data (`/data`), source code (`/src`) and text (`/doc`) associated with the publication "Recursive anisotropy: a spatial taphonomic study of the Early Pleistocene vertebrate assemblage of Tsiotra Vryssi, Mygdonia Basin, Greece", authored by D. Giusti et al. (DOI: [10.1111/bor.12368](https://doi.org/10.1111/bor.12368)). A preprint of the manuscript is available open access on [Open Science Framework](https://osf.io/qkznm/) (DOI: [10.17605/OSF.IO/QKZNM](https://doi.org/10.17605/OSF.IO/QKZNM)).
 
 ## Publication abstract
 
