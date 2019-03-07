@@ -8,7 +8,6 @@
   volume    = {4},
   number    = {3},
   pages     = {111-142},
-  file      = {Fernandez-Lopez2006.pdf:science_article/Fernandez-Lopez2006.pdf:PDF},
   keywords  = {Taphonomy, Site formation processes,},
   owner     = {dncgst},
   timestamp = {2015.03.25},
@@ -24,9 +23,7 @@
   pages    = {1296--1302},
   issn     = {0277-3791},
   doi      = {10.1016/j.quascirev.2010.07.022},
-  file     = {Fernandez-Jalvo2011.pdf:science_article/Fernandez-Jalvo2011.pdf:PDF},
   keywords = {Fauna taphonomy,},
-  url      = {http://www.sciencedirect.com/science/article/pii/S0277379110002842},
 }
 
 @Article{Dominguez-Rodrigo2012,
@@ -39,11 +36,9 @@
   pages     = {2116--2127},
   issn      = {0305-4403},
   doi       = {10.1016/j.jas.2012.02.027},
-  file      = {Dominguez-Rodrigo2012.pdf:science_article/Dominguez-Rodrigo2012.pdf:PDF},
   keywords  = {GIS, Fabric analysis, Olduvai, Site formation processes, Africa,},
   owner     = {dncgst},
   timestamp = {2012.12.07},
-  url       = {http://www.sciencedirect.com/science/article/pii/S030544031200091X},
 }
 
 @Article{Lenoble2004,
@@ -56,11 +51,9 @@
   pages     = {457 - 469},
   issn      = {0305-4403},
   doi       = {10.1016/j.jas.2003.09.013},
-  file      = {Lenoble2004.pdf:science_article/Lenoble2004.pdf:PDF},
   keywords  = {GIS, Fabric analysis, Paleolithic, Site formation processes, Taphonomy, France, Europe,},
   owner     = {dncgst},
   timestamp = {2012.12.11},
-  url       = {http://www.sciencedirect.com/science/article/pii/S0305440303001432},
 }
 
 @Article{Bertran1995,
@@ -73,11 +66,9 @@
   pages     = {521--535},
   issn      = {0305-4403},
   doi       = {10.1006/jasc.1995.0050},
-  file      = {Bertran1995.pdf:science_article/Bertran1995.pdf:PDF},
   keywords  = {GIS, Fabric analysis, Paleolithic, Site formation processes, France,},
   owner     = {dncgst},
   timestamp = {2012.12.11},
-  url       = {http://www.sciencedirect.com/science/article/pii/S0305440385700507},
 }
 
 @Article{Tourloukis2012,
@@ -90,11 +81,9 @@
   pages     = {1 - 15},
   issn      = {0277-3791},
   doi       = {10.1016/j.quascirev.2012.04.004},
-  file      = {Tourloukis2012.pdf:science_article/Tourloukis2012.pdf:PDF},
   keywords  = {Middle, Pleistocene, Greece, Dispersal events,},
   owner     = {dncgst},
   timestamp = {2012.12.06},
-  url       = {http://www.sciencedirect.com/science/article/pii/S027737911200145X},
 }
 
 @Article{Fiorillo1988,
@@ -105,7 +94,6 @@
   volume   = {26},
   number   = {1},
   pages    = {1--4},
-  file     = {Fiorillo1988.pdf:science_article/Fiorillo1988.pdf:PDF},
   keywords = {Fabric analysis,},
 }
 
@@ -127,11 +115,9 @@
   pages     = {91 - 101},
   issn      = {0305-4403},
   doi       = {http://dx.doi.org/10.1016/j.jas.2016.04.016},
-  file      = {Negre2016.pdf:science_article/Negre2016.pdf:PDF},
   keywords  = {Non-euclidean geostatistics, Spatial Analysis, Geostatistics, Spatial autocorrelation,},
   owner     = {dncgst},
   timestamp = {2016.05.05},
-  url       = {http://www.sciencedirect.com/science/article/pii/S0305440316300255},
 }
 
 @Article{Rondelli2014,
@@ -144,9 +130,7 @@
   pages    = {482 - 492},
   issn     = {0305-4403},
   doi      = {https://doi.org/10.1016/j.jas.2013.09.008},
-  file     = {Rondelli2014.pdf:science_article/Rondelli2014.pdf:PDF},
   keywords = {Anthropic markers, Ethnoarchaeology, Spatial analysis, Geostatistics, Chemical residues, Spot tests, ICP-AES},
-  url      = {http://www.sciencedirect.com/science/article/pii/S030544031300321X},
 }
 
 @Article{Markofsky2012,
@@ -159,11 +143,9 @@
   pages     = {428 - 439},
   issn      = {0305-4403},
   doi       = {10.1016/j.jas.2011.09.031},
-  file      = {Markofsky2012.pdf:science_article/Markofsky2012.pdf:PDF},
   keywords  = {Geostatistics, Site formation processes, Wavelet Analysis,},
   owner     = {dncgst},
   timestamp = {2012.12.07},
-  url       = {http://www.sciencedirect.com/science/article/pii/S030544031100358X},
 }
 
 @Article{Bevan2009,
@@ -176,11 +158,9 @@
   pages     = {956--964},
   issn      = {0305-4403},
   doi       = {10.1016/j.jas.2008.11.023},
-  file      = {Bevan2009.pdf:science_article/Bevan2009.pdf:PDF},
   keywords  = {Spatial analysis, Geostatistic, Human settlement,},
   owner     = {dncgst},
   timestamp = {2012.12.07},
-  url       = {http://www.sciencedirect.com/science/article/pii/S0305440308002653},
 }
 
 @Book{Dale2014,
@@ -204,7 +184,6 @@
   number   = {3},
   pages    = {211--227},
   doi      = {10.1017/s0094837300006941},
-  file     = {Behrensmeyer1982.pdf:science_article/Behrensmeyer1982.pdf:PDF},
   keywords = {Site formation processes, Fauna taphonomy,},
 }
 
@@ -217,7 +196,6 @@
   pages     = {81-93},
   owner     = {dncgst},
   timestamp = {2015.10.15},
-  url       = {http://www.academia.dk/BiologiskAntropologi/Tafonomi/Efremov_1940.php},
 }
 
 @InProceedings{Fernandez-Lopez2002,
@@ -228,7 +206,6 @@
   editor     = {M. De Renzi and M.V. Pardo Alonso and M. Belinchón and E. Peñalver and P. Montoya and A. Márquez-Aliaga},
   pages      = {37--47},
   eventtitle = {International Conference Taphos 2002},
-  file       = {Fernandez-Lopez2002.pdf:science_article/Fernandez-Lopez2002.pdf:PDF},
   keywords   = {Fauna taphonomy,},
   location   = {Valencia},
 }
@@ -253,10 +230,8 @@
   pages     = {53--60},
   issn      = {1096-8644},
   doi       = {10.1002/ajpa.1330450107},
-  file      = {Boaz1976.pdf:science_article/Boaz1976.pdf:PDF},
   keywords  = {Fauna taphonomy, Site formation processes, Fabric},
   publisher = {Wiley Subscription Services, Inc., A Wiley Company},
-  url       = {http://dx.doi.org/10.1002/ajpa.1330450107},
 }
 
 @Article{Hill1976,
@@ -278,7 +253,6 @@
   volume   = {8},
   number   = {1},
   pages    = {1--16},
-  file     = {Lyman2010.pdf:science_article/Lyman2010.pdf:PDF},
   keywords = {Fauna taphonomy,},
 }
 
@@ -290,11 +264,9 @@
   pages     = {1--21},
   issn      = {1866-9565},
   doi       = {10.1007/s12520-017-0497-2},
-  file      = {Dominguez-Rodrigo2017.pdf:science_article/Dominguez-Rodrigo2017.pdf:PDF},
   keywords  = {Site formation processes, Spatia Analysis, Point Pattern Analysis, Fauna Taphonomy,},
   owner     = {dncgst},
   timestamp = {2017.05.02},
-  url       = {http://dx.doi.org/10.1007/s12520-017-0497-2},
 }
 
 @InCollection{Petraglia1987,
@@ -336,11 +308,9 @@
   year      = {2013},
   volume    = {22},
   pages     = {43 - 45},
-  file      = {Harvati2013a.pdf:science_article/Harvati2013a.pdf:PDF},
   keywords  = {Greece, Dispersal events,},
   owner     = {dncgst},
   timestamp = {2013.09.04},
-  url       = {http://www.geo.uni-tuebingen.de/arbeitsgruppen/ur-und-fruehgeschichte-und-archaeologie-des-mittelalters/forschungsbereich/palaeoanthropologie/arbeitsgruppe/forschung/page.html},
 }
 
 @InCollection{Eberth2007,
@@ -351,7 +321,6 @@
   year      = {2007},
   editor    = {Raymond R. Rogers and David A. Eberth and Anthony R. Fiorillo},
   pages     = {265-332},
-  file      = {Eberth2007.pdf:science_article/Eberth2007.pdf:PDF},
   keywords  = {Taphonomy, Site formation processes,},
   owner     = {dncgst},
   timestamp = {2014.07.11},
@@ -380,11 +349,9 @@
   pages     = {50--60},
   issn      = {0047-2484},
   doi       = {10.1016/j.jhevol.2011.02.011},
-  file      = {Benito-Calvo2011.pdf:science_article/Benito-Calvo2011.pdf:PDF},
   keywords  = {Lower, Paleolithic, Site formation processes, GIS, Fabric analysis, Olduvai, Africa,},
   owner     = {dncgst},
   timestamp = {2012.12.19},
-  url       = {http://www.sciencedirect.com/science/article/pii/S0047248411000649},
 }
 
 @Article{Torre2013a,
@@ -397,11 +364,9 @@
   pages     = {2446--2457},
   issn      = {0305-4403},
   doi       = {10.1016/j.jas.2013.01.004},
-  file      = {Torre2013a.pdf:science_article/Torre2013a.pdf:PDF},
   keywords  = {Olduvai, GIS, Fabric analysis, Africa, Site formation processes, Taphonomy, Spatial Analysis,},
   owner     = {dncgst},
   timestamp = {2013.01.28},
-  url       = {http://www.sciencedirect.com/science/article/pii/S0305440313000113},
 }
 
 @Article{Coard1999,
@@ -414,9 +379,7 @@
   pages    = {1369--1375},
   issn     = {0305-4403},
   doi      = {https://doi.org/10.1006/jasc.1999.0438},
-  file     = {Coard1999.pdf:science_article/Coard1999.pdf:PDF},
   keywords = {Fauna taphonomy, Site formation processes},
-  url      = {http://www.sciencedirect.com/science/article/pii/S0305440399904387},
 }
 
 @Article{Coard1995,
@@ -429,9 +392,7 @@
   pages    = {441--448},
   issn     = {0305-4403},
   doi      = {https://doi.org/10.1006/jasc.1995.0043},
-  file     = {Coard1995.pdf:science_article/Coard1995.pdf:PDF},
   keywords = {Fauna taphonomy, Site formation processes,},
-  url      = {http://www.sciencedirect.com/science/article/pii/S030544038570043X},
 }
 
 @Book{Jammalamadaka2001,
@@ -444,7 +405,6 @@
   keywords  = {Fabric Analysis, Spatial Analysis,},
   owner     = {dncgst},
   timestamp = {2017.01.29},
-  url       = {https://books.google.de/books?id=sKqWMGqQXQkC},
 }
 
 @Article{Woodcock1983,
@@ -457,11 +417,9 @@
   pages     = {539 - 548},
   issn      = {0191-8141},
   doi       = {http://dx.doi.org/10.1016/0191-8141(83)90058-5},
-  file      = {Woodcock1983.pdf:statistics/Woodcock1983.pdf:PDF},
   keywords  = {Site formation processes, Fabric analysis, Eigenvalue analysis,},
   owner     = {dncgst},
   timestamp = {2014.06.27},
-  url       = {http://www.sciencedirect.com/science/article/pii/0191814183900585},
 }
 
 @Article{Rosenberg2004,
@@ -474,12 +432,10 @@
   pages     = {277--284},
   issn      = {1654-1103},
   doi       = {10.1111/j.1654-1103.2004.tb02262.x},
-  file      = {Rosenberg2004.pdf:science_article/Rosenberg2004.pdf:PDF},
   keywords  = {Directional pattern, Isotropy, Spatial analysis, Fabric Analysis, Wavelet Analysis,},
   owner     = {dncgst},
   publisher = {Blackwell Publishing Ltd},
   timestamp = {2016.07.19},
-  url       = {http://dx.doi.org/10.1111/j.1654-1103.2004.tb02262.x},
 }
 
 @Manual{RCoreTeam2017,
@@ -491,7 +447,6 @@
   __markedentry = {[dncgst:]},
   owner         = {dncgst},
   timestamp     = {2017.01.11},
-  url           = {https://www.R-project.org/},
 }
 
 @Book{spatstatBook,
@@ -501,8 +456,6 @@
   author    = {A. Baddeley and E. Rubak and R. Turner},
   address   = {London},
   month     = December,
-  file      = {spatstatBook.pdf:statistics/spatstatBook.pdf:PDF},
-  url       = {http://www.crcpress.com/books/details/9781482210200/},
 }
 
 @Article{Koufos2001,
@@ -516,7 +469,6 @@
   note          = {cited By 31},
   document_type = {Article},
   source        = {Scopus},
-  url           = {https://www.scopus.com/inward/record.uri?eid=2-s2.0-0034897085&partnerID=40&md5=774267d1e17aeb3ac5984ff8a2b4432e},
 }
 
 @Article{Behrensmeyer1988,
@@ -529,9 +481,7 @@
   pages    = {183--199},
   issn     = {0031-0182},
   doi      = {10.1016/0031-0182(88)90096-X},
-  file     = {Behrensmeyer1988.pdf:science_article/Behrensmeyer1988.pdf:PDF},
   keywords = {Fauna taphonomy, Site formation processes,},
-  url      = {http://www.sciencedirect.com/science/article/pii/003101828890096X},
 }
 
 @Article{Rosenberg2011,
@@ -543,7 +493,6 @@
   number   = {3},
   pages    = {229--232},
   doi      = {10.1111/j.2041-210x.2010.00081.x},
-  file     = {Rosenberg2011.pdf:science_article/Rosenberg2011.pdf:PDF},
   keywords = {Spatial analysis,},
 }
 
@@ -557,11 +506,9 @@
   pages     = {151 - 165},
   issn      = {0305-4403},
   doi       = {10.1016/j.jas.2003.07.004},
-  file      = {Lloyd2004.pdf:science_article/Lloyd2004.pdf:PDF},
   keywords  = {Spatial analysis, Geostatistics,},
   owner     = {dncgst},
   timestamp = {2012.12.07},
-  url       = {http://www.sciencedirect.com/science/article/pii/S0305440303001067},
 }
 
 @Article{Lenoble2008,
@@ -574,11 +521,9 @@
   pages     = {99 - 110},
   issn      = {0305-4403},
   doi       = {10.1016/j.jas.2007.02.011},
-  file      = {Lenoble2008.pdf:science_article/Lenoble2008.pdf:PDF},
   keywords  = {Site formation processes, Fabric analysis, France, Europe, GIS,},
   owner     = {dncgst},
   timestamp = {2012.12.07},
-  url       = {http://www.sciencedirect.com/science/article/pii/S0305440307000489},
 }
 
 @Book{Lyman1994,
@@ -632,9 +577,7 @@
   pages    = {846 - 854},
   issn     = {0305-4403},
   doi      = {https://doi.org/10.1016/j.jas.2009.11.014},
-  file     = {Pante2010.pdf:science_article/Pante2010.pdf:PDF},
   keywords = {Fauna taphonomy,},
-  url      = {http://www.sciencedirect.com/science/article/pii/S0305440309004324},
 }
 
 @Book{Frison1986,
@@ -656,9 +599,7 @@
   pages    = {15--31},
   issn     = {1040-6182},
   doi      = {https://doi.org/10.1016/j.quaint.2015.07.069},
-  file     = {Palombo2016.pdf:science_article/Palombo2016.pdf:PDF},
   keywords = {Large mammals, Mid-Pleistocene revolution, Faunal dynamics, Climate changes},
-  url      = {http://www.sciencedirect.com/science/article/pii/S1040618215007806},
 }
 
 @Article{Aramendi2017,
@@ -670,11 +611,9 @@
   pages     = {35--49},
   issn      = {0031-0182},
   doi       = {https://doi.org/10.1016/j.palaeo.2017.02.036},
-  file      = {Aramendi2017.pdf:science_article/Aramendi2017.pdf:PDF},
   keywords  = {Site formation processes, Spatial analysis, Fabric Analysis,},
   owner     = {dncgst},
   timestamp = {2017.06.19},
-  url       = {http://www.sciencedirect.com/science/article/pii/S0031018216308112},
 }
 
 @Article{Behrensmeyer1975a,
@@ -684,7 +623,6 @@
   year     = {1975},
   volume   = {146},
   pages    = {473--578},
-  file     = {Behrensmeyer1975a.pdf:science_article/Behrensmeyer1975a.pdf:PDF},
   keywords = {Fauna taphonomy,},
 }
 
@@ -698,11 +636,9 @@
   pages     = {3652--3661},
   issn      = {0305-4403},
   doi       = {http://dx.doi.org/10.1016/j.jas.2011.08.036},
-  file      = {Benito-Calvo2011a.pdf:science_article/Benito-Calvo2011a.pdf:PDF},
   keywords  = {Fabric analysis, Trampling, Site formation processes,},
   owner     = {dncgst},
   timestamp = {2015.02.18},
-  url       = {http://www.sciencedirect.com/science/article/pii/S0305440311003153},
 }
 
 @Article{Cobo-Sanchez2014,
@@ -716,11 +652,9 @@
   issn      = {1040-6182},
   note      = {The Evolution of Hominin Behavior during the Oldowan-Acheulian Transition: Recent Evidence from Olduvai Gorge and Peninj (Tanzania)},
   doi       = {http://dx.doi.org/10.1016/j.quaint.2013.07.130},
-  file      = {Cobo-Sanchez2014.pdf:science_article/Cobo-Sanchez2014.pdf:PDF},
   keywords  = {Site formation processes, Fabric analysis, Taphonomy, Olduvai,},
   owner     = {dncgst},
   timestamp = {2015.01.15},
-  url       = {http://www.sciencedirect.com/science/article/pii/S1040618213005363},
 }
 
 @Article{Dominguez-Rodrigo2014c,
@@ -733,11 +667,9 @@
   issn      = {1040-6182},
   note      = {The Evolution of Hominin Behavior during the Oldowan-Acheulian Transition: Recent Evidence from Olduvai Gorge and Peninj (Tanzania)},
   doi       = {http://dx.doi.org/10.1016/j.quaint.2013.08.015},
-  file      = {Dominguez-Rodrigo2014c.pdf:science_article/Dominguez-Rodrigo2014c.pdf:PDF},
   keywords  = {Taphonomy, Site formation processes, Point Pattern analysis, Fabric analysis, Spatial Analysis, Geostatistics,},
   owner     = {dncgst},
   timestamp = {2015.08.03},
-  url       = {http://www.sciencedirect.com/science/article/pii/S1040618213006198},
 }
 
 @Article{Dominguez-Rodrigo2014a,
@@ -751,11 +683,9 @@
   issn      = {1040-6182},
   note      = {The Evolution of Hominin Behavior during the Oldowan-Acheulian Transition: Recent Evidence from Olduvai Gorge and Peninj (Tanzania)},
   doi       = {http://dx.doi.org/10.1016/j.quaint.2013.09.042},
-  file      = {Dominguez-Rodrigo2014a.pdf:science_article/Dominguez-Rodrigo2014a.pdf:PDF},
   keywords  = {Site formation processes, Taphonomy, Olduvai,},
   owner     = {dncgst},
   timestamp = {2015.01.16},
-  url       = {http://www.sciencedirect.com/science/article/pii/S104061821300760X},
 }
 
 @Article{Dominguez-Rodrigo2014b,
@@ -767,11 +697,9 @@
   pages     = {153--166},
   issn      = {1040-6182},
   doi       = {http://dx.doi.org/10.1016/j.quaint.2013.09.025},
-  file      = {Dominguez-Rodrigo2014b.pdf:science_article/Dominguez-Rodrigo2014b.pdf:PDF},
   keywords  = {Site formation processes, Point Pattern analysis, Spatial analysis, Taphonomy, Geostatistics,},
   owner     = {dncgst},
   timestamp = {2015.08.03},
-  url       = {http://www.sciencedirect.com/science/article/pii/S104061821300743X},
 }
 
 @Article{Dominguez-Rodrigo2011,
@@ -782,7 +710,6 @@
   volume    = {9},
   number    = {1},
   pages     = {1--13},
-  file      = {Dominguez-Rodrigo2011.pdf:science_article/Dominguez-Rodrigo2011.pdf:PDF},
   keywords  = {Taphonomy, Site formation processes,},
   owner     = {dncgst},
   timestamp = {2015.03.25},
@@ -798,12 +725,10 @@
   pages     = {e68955},
   month     = {07},
   doi       = {10.1371/journal.pone.0068955},
-  file      = {Dominguez-Rodrigo2013.pdf:science_article/Dominguez-Rodrigo2013.pdf:PDF},
   keywords  = {Site formation processes, Fabric analysis, Taphonomy,},
   owner     = {dncgst},
   publisher = {Public Library of Science},
   timestamp = {2014.06.26},
-  url       = {http://dx.doi.org/10.1371%2Fjournal.pone.0068955},
 }
 
 @Article{Dominguez-Rodrigo2014,
@@ -816,11 +741,9 @@
   pages     = {44--68},
   issn      = {0305-4403},
   doi       = {http://dx.doi.org/10.1016/j.jas.2013.07.025},
-  file      = {Dominguez-Rodrigo2014.pdf:science_article/Dominguez-Rodrigo2014.pdf:PDF},
   keywords  = {Site formation processes, Fabric analysis, Taphonomy, Olduvai, Africa,},
   owner     = {dncgst},
   timestamp = {2014.06.25},
-  url       = {http://www.sciencedirect.com/science/article/pii/S0305440313002756},
 }
 
 @Article{Fiorillo1991,
@@ -832,9 +755,7 @@
   number   = {3},
   pages    = {281--311},
   doi      = {10.1016/0031-0182(91)90151-g},
-  file     = {Fiorillo1991.pdf:science_article/Fiorillo1991.pdf:PDF},
   keywords = {Site formation processes, Fabric analysis, Fauna taphonomy, Spatial analysis,},
-  url      = {http://www.sciencedirect.com/science/article/pii/003101829190151G},
 }
 
 @Article{Giusti2016,
@@ -846,11 +767,9 @@
   pages     = {235--249},
   issn      = {2352-409X},
   doi       = {http://dx.doi.org/10.1016/j.jasrep.2016.06.014},
-  file      = {Giusti2016.pdf:science_article/Giusti2016.pdf:PDF},
   keywords  = {Spatial analysis, Site formation processes, Point Pattern Analysis, Vertical Distribution, Lithic Taphonomy, Fauna Taphonomy,},
   owner     = {dncgst},
   timestamp = {2017.01.24},
-  url       = {//www.sciencedirect.com/science/article/pii/S2352409X16302656},
 }
 
 @Article{Giusti,
@@ -861,7 +780,6 @@
   issn     = {1040-6182},
   doi      = {https://doi.org/10.1016/j.quaint.2018.01.041},
   keywords = {Spatial analysis, Site formation processes, Vertical distribution, Fabric analysis, Point pattern analysis, Middle Pleistocene },
-  url      = {https://www.sciencedirect.com/science/article/pii/S1040618217309795},
 }
 
 @Article{Kaufmann2011,
@@ -874,9 +792,7 @@
   pages    = {334--344},
   issn     = {0305-4403},
   doi      = {https://doi.org/10.1016/j.jas.2010.09.010},
-  file     = {Kaufmann2011.pdf:science_article/Kaufmann2011.pdf:PDF},
   keywords = {Site formation processes, Fauna taphonomy,},
-  url      = {http://www.sciencedirect.com/science/article/pii/S0305440310003201},
 }
 
 @InProceedings{Konidaris2016,
@@ -899,11 +815,9 @@
   pages     = {353--362},
   issn      = {1631-0683},
   doi       = {http://doi.org/10.1016/j.crpv.2015.05.004},
-  file      = {Konidaris2015.pdf:science_article/Konidaris2015.pdf:PDF},
   keywords  = {Villafranchian,},
   owner     = {dncgst},
   timestamp = {2017.04.25},
-  url       = {http://www.sciencedirect.com/science/article/pii/S1631068315000706},
 }
 
 @Article{Koufos,
@@ -913,9 +827,7 @@
   year     = {in press},
   issn     = {1040-6182},
   doi      = {https://doi.org/10.1016/j.quaint.2017.09.043},
-  file     = {Koufos2017.pdf:science_article/Koufos2017.pdf:PDF},
   keywords = {Greece, Villafranchian, Ursus, Systematic, Endocranium, Biostratigraphy},
-  url      = {http://www.sciencedirect.com/science/article/pii/S1040618217306985},
 }
 
 @Article{Koufos1995,
@@ -929,9 +841,7 @@
   issn     = {0016-6995},
   note     = {First European Palaeontological Congress},
   doi      = {10.1016/S0016-6995(95)80171-5},
-  file     = {Koufos1995.pdf:science_article/Koufos1995.pdf:PDF},
   keywords = {Mygdonia basin, Macedonia, Greece, Lithostratigraphy, Biochronology, Palaeoenvironment, Bassin de mygdonia, Macédoine, Grèce, Lithostratigraphie, Biochronologie, Paléoenvironnement},
-  url      = {http://www.sciencedirect.com/science/article/pii/S0016699595801715},
 }
 
 @Article{Organista2017,
@@ -943,11 +853,9 @@
   pages     = {59--75},
   issn      = {0031-0182},
   doi       = {http://dx.doi.org/10.1016/j.palaeo.2017.03.001},
-  file      = {Organista2017.pdf:science_article/Organista2017.pdf:PDF},
   keywords  = {Site formation processes, Spatial Analysis, Point Pattern Analysis, Fabric Analysis, Fauna Taphonomy,},
   owner     = {dncgst},
   timestamp = {2017.03.08},
-  url       = {http://www.sciencedirect.com/science/article/pii/S0031018216306800},
 }
 
 @Article{Palombo2010,
@@ -960,11 +868,9 @@
   pages     = {179--194},
   issn      = {1040-6182},
   doi       = {10.1016/j.quaint.2009.11.016},
-  file      = {Palombo2010.pdf:science_article/Palombo2010.pdf:PDF},
   keywords  = {Early, Middle, Pleistocene, Europe, Human settlement},
   owner     = {dncgst},
   timestamp = {2012.12.11},
-  url       = {http://www.sciencedirect.com/science/article/pii/S1040618209004145},
 }
 
 @Article{Petraglia1994,
@@ -977,11 +883,9 @@
   pages     = {228--254},
   issn      = {0278-4165},
   doi       = {http://dx.doi.org/10.1006/jaar.1994.1014},
-  file      = {Petraglia1994.pdf:science_article/Petraglia1994.pdf:PDF},
   keywords  = {Site formation processes, Olduvai, Early, Pleistocene, Taphonomy, Lithic Taphonomy, Lithic technology, Fabric analysis, Spatial analysis,},
   owner     = {dncgst},
   timestamp = {2014.06.18},
-  url       = {http://www.sciencedirect.com/science/article/pii/S0278416584710142},
 }
 
 @Article{Voorhies1969,
@@ -992,7 +896,6 @@
   volume   = {Special Paper 1},
   pages    = {1--69},
   doi      = {10.2113/gsrocky.8.special_paper_1.1},
-  file     = {Voorhies1969.pdf:science_article/Voorhies1969.pdf:PDF},
   keywords = {Site formation processes, Fabric analysis, Fauna taphonomy,},
 }
 
@@ -1005,7 +908,6 @@
   number  = {3},
   pages   = {217--239},
   doi     = {10.1007/bf01032885},
-  file    = {Journel1982.pdf:statistics/Journel1982.pdf:PDF},
 }
 
 @Article{Balsey1960,
