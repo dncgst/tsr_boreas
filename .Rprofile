@@ -2,6 +2,7 @@
 ## exploratory data analysis
 library(lattice)
 library(ggplot2)
+library(spatial)
 library(ggmap)
 library(RColorBrewer)
 library(broom)
